@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E1235D404B00CD5F24 /* AlbumController.swift */; };
+		9633B3E4235D406100CD5F24 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E3235D406100CD5F24 /* AlbumCell.swift */; };
+		9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */; };
+		9633B3E8235D455F00CD5F24 /* MyFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E7235D455F00CD5F24 /* MyFriendsController.swift */; };
+		9633B3EB235D46A800CD5F24 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3EA235D46A800CD5F24 /* Friend.swift */; };
+		9633B3ED235D46B100CD5F24 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3EC235D46B100CD5F24 /* Group.swift */; };
+		963A1675235FE7E300C5B297 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A1674235FE7E300C5B297 /* Session.swift */; };
+		963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A1676235FEB6600C5B297 /* MyAccountController.swift */; };
+		9647AFAB235AB0D000BBC811 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */; };
+		9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */; };
 		96694CBD23555EC300377AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CBC23555EC300377AEE /* AppDelegate.swift */; };
 		96694CBF23555EC300377AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CBE23555EC300377AEE /* SceneDelegate.swift */; };
-		96694CC123555EC300377AEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CC023555EC300377AEE /* ViewController.swift */; };
 		96694CC423555EC300377AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96694CC223555EC300377AEE /* Main.storyboard */; };
 		96694CC623555EC500377AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96694CC523555EC500377AEE /* Assets.xcassets */; };
-		96694CC923555EC500377AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96694CC723555EC500377AEE /* LaunchScreen.storyboard */; };
 		96694CD423555EC500377AEE /* VkontakteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CD323555EC500377AEE /* VkontakteTests.swift */; };
 		96694CDF23555EC500377AEE /* VkontakteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CDE23555EC500377AEE /* VkontakteUITests.swift */; };
+		96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CED2355628100377AEE /* LoginFormViewController.swift */; };
+		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
+		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +46,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9633B3E1235D404B00CD5F24 /* AlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumController.swift; sourceTree = "<group>"; };
+		9633B3E3235D406100CD5F24 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
+		9633B3E7235D455F00CD5F24 /* MyFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsController.swift; sourceTree = "<group>"; };
+		9633B3EA235D46A800CD5F24 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		9633B3EC235D46B100CD5F24 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		963A1674235FE7E300C5B297 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		963A1676235FEB6600C5B297 /* MyAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
+		9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
+		9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
 		96694CB923555EC300377AEE /* Vkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CBC23555EC300377AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96694CBE23555EC300377AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96694CC023555EC300377AEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96694CC323555EC300377AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96694CC523555EC500377AEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		96694CC823555EC500377AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96694CCA23555EC500377AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96694CCF23555EC500377AEE /* VkontakteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VkontakteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CD323555EC500377AEE /* VkontakteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteTests.swift; sourceTree = "<group>"; };
@@ -49,6 +68,9 @@
 		96694CDA23555EC500377AEE /* VkontakteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VkontakteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CDE23555EC500377AEE /* VkontakteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteUITests.swift; sourceTree = "<group>"; };
 		96694CE023555EC500377AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96694CED2355628100377AEE /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
+		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
+		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9633B3E9235D468A00CD5F24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9633B3EA235D46A800CD5F24 /* Friend.swift */,
+				9633B3EC235D46B100CD5F24 /* Group.swift */,
+				963A1674235FE7E300C5B297 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		96694CB023555EC300377AEE = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +131,14 @@
 		96694CBB23555EC300377AEE /* Vkontakte */ = {
 			isa = PBXGroup;
 			children = (
+				96694CC223555EC300377AEE /* Main.storyboard */,
+				96694CCA23555EC500377AEE /* Info.plist */,
 				96694CBC23555EC300377AEE /* AppDelegate.swift */,
 				96694CBE23555EC300377AEE /* SceneDelegate.swift */,
-				96694CC023555EC300377AEE /* ViewController.swift */,
-				96694CC223555EC300377AEE /* Main.storyboard */,
 				96694CC523555EC500377AEE /* Assets.xcassets */,
-				96694CC723555EC500377AEE /* LaunchScreen.storyboard */,
-				96694CCA23555EC500377AEE /* Info.plist */,
+				96D478C1235958ED00496861 /* Cells */,
+				96694CEC23555F0D00377AEE /* ViewControllers */,
+				9633B3E9235D468A00CD5F24 /* Model */,
 			);
 			path = Vkontakte;
 			sourceTree = "<group>";
@@ -126,6 +159,30 @@
 				96694CE023555EC500377AEE /* Info.plist */,
 			);
 			path = VkontakteUITests;
+			sourceTree = "<group>";
+		};
+		96694CEC23555F0D00377AEE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				96694CED2355628100377AEE /* LoginFormViewController.swift */,
+				9633B3E7235D455F00CD5F24 /* MyFriendsController.swift */,
+				9633B3E1235D404B00CD5F24 /* AlbumController.swift */,
+				9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */,
+				96D478BD235958B400496861 /* AllGroupsController.swift */,
+				963A1676235FEB6600C5B297 /* MyAccountController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		96D478C1235958ED00496861 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */,
+				9633B3E3235D406100CD5F24 /* AlbumCell.swift */,
+				9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */,
+				96D478BF235958E300496861 /* AllGroupsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96694CC923555EC500377AEE /* LaunchScreen.storyboard in Resources */,
 				96694CC623555EC500377AEE /* Assets.xcassets in Resources */,
 				96694CC423555EC300377AEE /* Main.storyboard in Resources */,
 			);
@@ -259,9 +315,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96694CC123555EC300377AEE /* ViewController.swift in Sources */,
+				963A1675235FE7E300C5B297 /* Session.swift in Sources */,
+				96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */,
+				9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */,
+				9647AFAB235AB0D000BBC811 /* MyGroupsController.swift in Sources */,
 				96694CBD23555EC300377AEE /* AppDelegate.swift in Sources */,
+				9633B3E8235D455F00CD5F24 /* MyFriendsController.swift in Sources */,
 				96694CBF23555EC300377AEE /* SceneDelegate.swift in Sources */,
+				9633B3ED235D46B100CD5F24 /* Group.swift in Sources */,
+				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,
+				9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */,
+				9633B3EB235D46A800CD5F24 /* Friend.swift in Sources */,
+				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
+				96D478BE235958B400496861 /* AllGroupsController.swift in Sources */,
+				9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */,
+				9633B3E4235D406100CD5F24 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,14 +371,6 @@
 				96694CC323555EC300377AEE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		96694CC723555EC500377AEE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				96694CC823555EC500377AEE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
