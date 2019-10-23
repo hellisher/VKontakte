@@ -213,7 +213,7 @@
         <scene sceneID="LZh-9k-dfR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="17V-Nh-laC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Friends" id="TIg-pr-iYa"/>
+                    <tabBarItem key="tabBarItem" title="My Friends" image="FriendsIcon" id="TIg-pr-iYa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFe-vx-jtc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -375,7 +375,7 @@
         <scene sceneID="m2f-o9-wjh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rqh-Am-zZu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Groups" id="jQw-Ge-J0v"/>
+                    <tabBarItem key="tabBarItem" title="My Groups" image="GroupsIcon" id="jQw-Ge-J0v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bY3-eI-4uZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -449,7 +449,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xai-tO-eYl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Account" id="GaZ-A7-USL"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="SettingsIcon" id="GaZ-A7-USL"/>
                     <connections>
                         <outlet property="token" destination="rSG-1X-7r4" id="bPe-5i-CSN"/>
                         <outlet property="userID" destination="Jfp-48-RJF" id="LLB-mf-aVv"/>
@@ -462,4 +462,9 @@
             <point key="canvasLocation" x="932" y="1239"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FriendsIcon" width="24" height="24"/>
+        <image name="GroupsIcon" width="24" height="24"/>
+        <image name="SettingsIcon" width="32" height="32"/>
+    </resources>
 </document>
