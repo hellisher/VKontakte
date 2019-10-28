@@ -24,6 +24,7 @@
 		96694CD423555EC500377AEE /* VkontakteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CD323555EC500377AEE /* VkontakteTests.swift */; };
 		96694CDF23555EC500377AEE /* VkontakteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CDE23555EC500377AEE /* VkontakteUITests.swift */; };
 		96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CED2355628100377AEE /* LoginFormViewController.swift */; };
+		968DFE57236716DF00C4BABF /* VkontakteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		96694CDE23555EC500377AEE /* VkontakteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteUITests.swift; sourceTree = "<group>"; };
 		96694CE023555EC500377AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96694CED2355628100377AEE /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
+		968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteLoginViewController.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 				9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */,
 				96D478BD235958B400496861 /* AllGroupsController.swift */,
 				963A1676235FEB6600C5B297 /* MyAccountController.swift */,
+				968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */,
 				9633B3EB235D46A800CD5F24 /* Friend.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
+				968DFE57236716DF00C4BABF /* VkontakteLoginViewController.swift in Sources */,
 				96D478BE235958B400496861 /* AllGroupsController.swift in Sources */,
 				9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */,
 				9633B3E4235D406100CD5F24 /* AlbumCell.swift in Sources */,
