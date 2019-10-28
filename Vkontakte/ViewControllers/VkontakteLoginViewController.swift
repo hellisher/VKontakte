@@ -53,6 +53,10 @@ extension VkontakteLoginViewController: WKNavigationDelegate {
         let token = params?["access_token"]
         Session.instance.token = token!
         print(Session.instance.token)
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "LoginFormViewController") as! UIViewController
+        self.present(viewController, animated: true)
+        
         decisionHandler(.cancel)
     }
 }
