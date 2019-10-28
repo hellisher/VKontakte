@@ -1,0 +1,6 @@
+framework module Pods_VkontakteTests {
+  umbrella header "Pods-VkontakteTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

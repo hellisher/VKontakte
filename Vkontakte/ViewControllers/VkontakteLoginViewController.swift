@@ -49,7 +49,7 @@ extension VkontakteLoginViewController: WKNavigationDelegate {
                 dict[key] = value
                 return dict
             })
-        print(params)
+        print(params!)
         let token = params?["access_token"]
         Session.instance.token = token!
         print(Session.instance.token)
