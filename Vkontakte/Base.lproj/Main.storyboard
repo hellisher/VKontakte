@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Vkontakte Login View Controller-->
+        <!--Response Controller-->
         <scene sceneID="dXQ-Kn-TxT">
             <objects>
-                <viewController id="glJ-R7-Puu" customClass="VkontakteLoginViewController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="glJ-R7-Puu" customClass="ResponseController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24b-im-tda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

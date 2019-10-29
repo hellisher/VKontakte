@@ -17,7 +17,7 @@ class Session {
     
     var userName:String = "Valerii El-Khatib"
     var userPhoto: UIImage = UIImage(named: "El-Khatib")!
-    var userID: Int = 7152277
+    var userID: String = ""
     var token: String = ""
     
 }

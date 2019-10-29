@@ -27,7 +27,7 @@
 		96694CD423555EC500377AEE /* VkontakteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CD323555EC500377AEE /* VkontakteTests.swift */; };
 		96694CDF23555EC500377AEE /* VkontakteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CDE23555EC500377AEE /* VkontakteUITests.swift */; };
 		96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CED2355628100377AEE /* LoginFormViewController.swift */; };
-		968DFE57236716DF00C4BABF /* VkontakteLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */; };
+		968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* ResponseController.swift */; };
 		96A6A6E2236763AD00BB33F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* User.swift */; };
 		96A6A6E42367661D00BB33F6 /* GroupJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* GroupJSON.swift */; };
 		96A6A6E62367662B00BB33F6 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* Photo.swift */; };
@@ -81,7 +81,7 @@
 		96694CDE23555EC500377AEE /* VkontakteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteUITests.swift; sourceTree = "<group>"; };
 		96694CE023555EC500377AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96694CED2355628100377AEE /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
-		968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteLoginViewController.swift; sourceTree = "<group>"; };
+		968DFE56236716DF00C4BABF /* ResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		96A6A6E1236763AD00BB33F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* GroupJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupJSON.swift; sourceTree = "<group>"; };
 		96A6A6E52367662B00BB33F6 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */,
 				96D478BD235958B400496861 /* AllGroupsController.swift */,
 				963A1676235FEB6600C5B297 /* MyAccountController.swift */,
-				968DFE56236716DF00C4BABF /* VkontakteLoginViewController.swift */,
+				968DFE56236716DF00C4BABF /* ResponseController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 				96A6A6E62367662B00BB33F6 /* Photo.swift in Sources */,
 				9633B3EB235D46A800CD5F24 /* Friend.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
-				968DFE57236716DF00C4BABF /* VkontakteLoginViewController.swift in Sources */,
+				968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */,
 				96D478BE235958B400496861 /* AllGroupsController.swift in Sources */,
 				9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */,
 				9633B3E4235D406100CD5F24 /* AlbumCell.swift in Sources */,
