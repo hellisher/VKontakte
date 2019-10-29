@@ -20,4 +20,3 @@ let elonMusk = Friend(friendName: "Elon Musk", friendImage: UIImage(named: "Elon
 let philKnight = Friend(friendName: "Phil Knight", friendImage: UIImage(named: "PhilKnightPhoto"))
 
 let myFriends = [steveJobs, jonathanIve, elonMusk, philKnight]
-
