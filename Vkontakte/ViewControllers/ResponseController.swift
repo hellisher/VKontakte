@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import WebKit
+import SwiftyJSON
 
 class ResponseController: UIViewController {
     
@@ -88,10 +89,36 @@ class VKApi {
             URLQueryItem(name: "name_case", value: "nom"),
             URLQueryItem(name: "v", value: "5.102")
         ]
-        Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseJSON { response in
-            print(response.value ?? "")
+        Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
+            guard let data = response.value else { return }
+            let json = try! JSON(data: data) //Для чего это требуется?
+            
+            let user = try! JSONDecoder().decode(UserResponse.self, from: data).list
+            print(user)
         }
     }
+    //Получение данных о друзьях
+    func loadUserFriendsData(firstName: String, lastName: String, completion: @escaping ([UserJSON]) -> Void) {
+        let accessParameters = ["access_token": Session.instance.token]
+        var urlUserFriends = URLComponents()
+        urlUserFriends.scheme = "https"
+        urlUserFriends.host = "api.vk.com"
+        urlUserFriends.path = "/method/friends.get"
+        urlUserFriends.queryItems = [
+            URLQueryItem(name: "user_id", value: "6492"),
+            URLQueryItem(name: "order", value: "name"),
+            URLQueryItem(name: "count", value: "3"),
+            URLQueryItem(name: "fields", value: "bdate, city, country"),
+            URLQueryItem(name: "name_case", value: "nom"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
+        guard let data = response.value else { return }
+        let user = try! JSONDecoder().decode(UserResponse.self, from: data).list
+        completion(user)
+        }
+    }
+    
     //Получение фотографий пользователя
     func getUserPhotos() {
         let accessParameters = ["access_token": Session.instance.token]

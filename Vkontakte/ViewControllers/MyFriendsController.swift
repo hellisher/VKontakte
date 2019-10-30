@@ -10,16 +10,15 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
     
-    var friends = myFriends
+    var friends = [UserJSON]()
+    var responseController = VKApi()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        responseController.loadUserFriendsData(firstName: "Alexey", lastName: "Abakov") { [weak self] friends in
+            self?.friends = friends
+            self?.tableView?.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -31,14 +30,13 @@ class MyFriendsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myFriends.count
+        return friends.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
-        cell.friendName.text = friend.friendName
-        cell.friendImage.image = friend.friendImage
+        cell.friendName.text = "\(friend.firstName)"
         return cell
     }
 
