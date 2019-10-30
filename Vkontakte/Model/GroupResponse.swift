@@ -1,5 +1,5 @@
 //
-//  UserResponse.swift
+//  GroupResponse.swift
 //  Vkontakte
 //
 //  Created by Валерий Эль-Хатиб on 30.10.2019.
@@ -10,6 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class UserResponse: Decodable {
-    let list: [UserJSON]
+class GroupResponse: Decodable {
+    let list: [Group]
 }

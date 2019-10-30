@@ -10,7 +10,7 @@ import UIKit
 
 class AllGroupsController: UITableViewController {
 
-    var allGroups = groups
+    var allGroups = [Group]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class AllGroupsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupCell", for: indexPath) as! AllGroupsCell
         let group = allGroups[indexPath.row]
         cell.groupName.text = group.groupName
-        cell.groupImage.image = group.groupImage
         return cell
     }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
     
-    var friends = [UserJSON]()
+    var friends = [Friend]()
     var responseController = VKApi()
 
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class MyFriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
-        cell.friendName.text = "\(friend.firstName)"
+        cell.friendName.text = friend.firstName
         return cell
     }
 

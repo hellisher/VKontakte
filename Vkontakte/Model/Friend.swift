@@ -2,21 +2,28 @@
 //  User.swift
 //  Vkontakte
 //
-//  Created by Валерий Эль-Хатиб on 21.10.2019.
+//  Created by Валерий Эль-Хатиб on 28.10.2019.
 //  Copyright © 2019 EVM Corporation. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-struct Friend {
-    var friendName: String?
-    var friendImage: UIImage?
+//в методичке был тип Object. Зачем он нужен был?
+
+class Friend: Decodable {
+    dynamic var firstName = ""
+    dynamic var lastName = ""
+    
+    enum FriendKeys: String, CodingKey {
+        case firstName
+        case lastName
+    }
+    
+    convenience required init(from decoder: Decoder) throws {
+        self.init()
+        let values = try decoder.container(keyedBy: FriendKeys.self)
+        self.firstName = try values.decode(String.self, forKey: .firstName)
+        self.lastName = try values.decode(String.self, forKey: .lastName)
+    }
 }
 
-let steveJobs = Friend(friendName: "Steve Jobs", friendImage: UIImage(named: "SteveJobsPhoto"))
-let jonathanIve = Friend(friendName: "Jonathan Ive", friendImage: UIImage(named: "JonathanIvePhoto"))
-let elonMusk = Friend(friendName: "Elon Musk", friendImage: UIImage(named: "ElonMuskPhoto"))
-let philKnight = Friend(friendName: "Phil Knight", friendImage: UIImage(named: "PhilKnightPhoto"))
-
-let myFriends = [steveJobs, jonathanIve, elonMusk, philKnight]

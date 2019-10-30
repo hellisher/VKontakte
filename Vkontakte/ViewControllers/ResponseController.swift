@@ -91,14 +91,15 @@ class VKApi {
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let json = try! JSON(data: data) //Для чего это требуется?
+            //let json = try! JSON(data: data) //Для чего это требуется?
             
-            let user = try! JSONDecoder().decode(UserResponse.self, from: data).list
-            print(user)
+            let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).list
+            print(friend)
         }
     }
+    
     //Получение данных о друзьях
-    func loadUserFriendsData(firstName: String, lastName: String, completion: @escaping ([UserJSON]) -> Void) {
+    func loadUserFriendsData(firstName: String, lastName: String, completion: @escaping ([Friend]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserFriends = URLComponents()
         urlUserFriends.scheme = "https"
@@ -114,8 +115,8 @@ class VKApi {
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
         guard let data = response.value else { return }
-        let user = try! JSONDecoder().decode(UserResponse.self, from: data).list
-        completion(user)
+        let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).list
+        completion(friend)
         }
     }
     
@@ -136,6 +137,7 @@ class VKApi {
             print(response.value ?? "")
         }
     }
+    
     //Получение групп пользователя
     func getUserGroups() {
         let accessParameters = ["access_token": Session.instance.token]
@@ -149,10 +151,35 @@ class VKApi {
             URLQueryItem(name: "count", value: "3"),
             URLQueryItem(name: "v", value: "5.102")
         ]
-        Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseJSON { response in
-            print(response.value ?? "")
+        Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
+            guard let data = response.value else { return }
+            //let json = try! JSON(data: data) //Для чего это требуется?
+            
+            let group = try! JSONDecoder().decode(GroupResponse.self, from: data).list
+            print(group)
         }
     }
+    
+    //Получение данных о группах
+    func loadGroupData(groupName: String, completion: @escaping ([Group]) -> Void) {
+        let accessParameters = ["access_token": Session.instance.token]
+        var urlUserGroups = URLComponents()
+        urlUserGroups.scheme = "https"
+        urlUserGroups.host = "api.vk.com"
+        urlUserGroups.path = "/method/groups.get"
+        urlUserGroups.queryItems = [
+            URLQueryItem(name: "user_id", value: Session.instance.userID),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "count", value: "3"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
+        guard let data = response.value else { return }
+        let group = try! JSONDecoder().decode(GroupResponse.self, from: data).list
+        completion(group)
+        }
+    }
+    
     //Поиск групп пользователя
     func searchUserGroups(text: String) {
         let accessParameters = ["access_token": Session.instance.token]

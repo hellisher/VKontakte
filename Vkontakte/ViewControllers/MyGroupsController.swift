@@ -11,19 +11,16 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     var myGroups = [Group]()
+    var responseController = VKApi()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        responseController.loadGroupData(groupName: "Apple") { [weak self] groups in
+            self?.myGroups = groups
+            self?.tableView?.reloadData()
+        }
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -38,7 +35,6 @@ class MyGroupsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell", for: indexPath) as! MyGroupsCell
         let group = myGroups[indexPath.row]
         cell.groupName.text = group.groupName
-        cell.groupImage.image = group.groupImage
         return cell
     }
     
