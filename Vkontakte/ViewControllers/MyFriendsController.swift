@@ -25,14 +25,12 @@ class MyFriendsController: UITableViewController {
             self?.tableView?.reloadData()
         }
     }
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return friends.count
     }
 
@@ -40,6 +38,7 @@ class MyFriendsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
         cell.friendName.text = friend.firstName
+        cell.friendImage.image = friendPhotos.friendPhoto
         return cell
     }
 
