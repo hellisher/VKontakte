@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Group {
+class Group: Decodable {
     dynamic var groupName = ""
     
     enum GroupKeys: String, CodingKey {

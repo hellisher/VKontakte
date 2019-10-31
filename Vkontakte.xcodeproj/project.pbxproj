@@ -12,6 +12,7 @@
 		95287872B0C662516BE167FB /* Pods_VkontakteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */; };
 		962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0D62369A3FF009A6F19 /* FriendResponse.swift */; };
 		962EF0D92369B659009A6F19 /* GroupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0D82369B659009A6F19 /* GroupResponse.swift */; };
+		962EF0DB236ACE12009A6F19 /* FriendPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */; };
 		9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E1235D404B00CD5F24 /* AlbumController.swift */; };
 		9633B3E4235D406100CD5F24 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E3235D406100CD5F24 /* AlbumCell.swift */; };
 		9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */; };
@@ -30,7 +31,7 @@
 		968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* ResponseController.swift */; };
 		96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* Friend.swift */; };
 		96A6A6E42367661D00BB33F6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* Group.swift */; };
-		96A6A6E62367662B00BB33F6 /* PhotoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* PhotoJSON.swift */; };
+		96A6A6E62367662B00BB33F6 /* FriendPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* FriendPhoto.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkontakteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		962EF0D62369A3FF009A6F19 /* FriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendResponse.swift; sourceTree = "<group>"; };
 		962EF0D82369B659009A6F19 /* GroupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupResponse.swift; sourceTree = "<group>"; };
+		962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoResponse.swift; sourceTree = "<group>"; };
 		9633B3E1235D404B00CD5F24 /* AlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumController.swift; sourceTree = "<group>"; };
 		9633B3E3235D406100CD5F24 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 		968DFE56236716DF00C4BABF /* ResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		96A6A6E1236763AD00BB33F6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		96A6A6E52367662B00BB33F6 /* PhotoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJSON.swift; sourceTree = "<group>"; };
+		96A6A6E52367662B00BB33F6 /* FriendPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhoto.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 		A8BE248A10E0A99D94A072A9 /* Pods-Vkontakte-VkontakteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,9 +128,10 @@
 			children = (
 				96A6A6E1236763AD00BB33F6 /* Friend.swift */,
 				962EF0D62369A3FF009A6F19 /* FriendResponse.swift */,
+				96A6A6E52367662B00BB33F6 /* FriendPhoto.swift */,
+				962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */,
 				96A6A6E32367661D00BB33F6 /* Group.swift */,
 				962EF0D82369B659009A6F19 /* GroupResponse.swift */,
-				96A6A6E52367662B00BB33F6 /* PhotoJSON.swift */,
 				963A1674235FE7E300C5B297 /* Session.swift */,
 			);
 			path = Model;
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963A1675235FE7E300C5B297 /* Session.swift in Sources */,
+				962EF0DB236ACE12009A6F19 /* FriendPhotoResponse.swift in Sources */,
 				96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */,
 				9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */,
 				962EF0D92369B659009A6F19 /* GroupResponse.swift in Sources */,
@@ -487,7 +491,7 @@
 				96A6A6E42367661D00BB33F6 /* Group.swift in Sources */,
 				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,
 				9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */,
-				96A6A6E62367662B00BB33F6 /* PhotoJSON.swift in Sources */,
+				96A6A6E62367662B00BB33F6 /* FriendPhoto.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
 				962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */,
 				968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */,

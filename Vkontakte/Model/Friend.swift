@@ -8,7 +8,7 @@
 
 import Foundation
 
-//в методичке был тип Object. Зачем он нужен был?
+//ВОПРОС! в методичке был тип Object. Зачем он нужен был?
 
 class Friend: Decodable {
     dynamic var firstName = ""

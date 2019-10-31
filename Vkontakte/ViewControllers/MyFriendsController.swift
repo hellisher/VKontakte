@@ -11,6 +11,7 @@ import UIKit
 class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
+    var friendPhotos = [FriendPhoto]()
     var responseController = VKApi()
 
     override func viewDidLoad() {
@@ -19,12 +20,14 @@ class MyFriendsController: UITableViewController {
             self?.friends = friends
             self?.tableView?.reloadData()
         }
+        responseController.loadUserFriendsPhotoData(friendPhoto: (UIImage(named: "1"))!) { [weak self] friendPhotos in
+            self?.friendPhotos = friendPhotos
+            self?.tableView?.reloadData()
+        }
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 

@@ -91,7 +91,9 @@ class VKApi {
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            //let json = try! JSON(data: data) //Для чего это требуется?
+            
+            //ВОПРОС! Не понимаю для чего требуется данная запись. Прошу пояснить.
+            //let json = try! JSON(data: data)
             
             let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).list
             print(friend)
@@ -133,8 +135,34 @@ class VKApi {
             URLQueryItem(name: "count", value: "2"),
             URLQueryItem(name: "v", value: "5.102")
         ]
-        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseJSON { response in
-            print(response.value ?? "")
+        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
+            guard let data = response.value else { return }
+            
+            //ВОПРОС! Не понимаю для чего требуется данная запись. Прошу пояснить.
+            //let json = try! JSON(data: data)
+            
+            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).list
+            print(friendPhoto)
+        }
+    }
+    
+        //Получение фотографий друзей
+    func loadUserFriendsPhotoData(friendPhoto: UIImage, completion: @escaping ([FriendPhoto]) -> Void) {
+        let accessParameters = ["access_token": Session.instance.token]
+        var urlUserPhotos = URLComponents()
+        urlUserPhotos.scheme = "https"
+        urlUserPhotos.host = "api.vk.com"
+        urlUserPhotos.path = "/method/photos.get"
+        urlUserPhotos.queryItems = [
+            URLQueryItem(name: "owner_id", value: "-1"),
+            URLQueryItem(name: "album_id", value: "wall"),
+            URLQueryItem(name: "count", value: "2"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
+        guard let data = response.value else { return }
+        let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).list
+        completion(friendPhoto)
         }
     }
     
@@ -153,7 +181,9 @@ class VKApi {
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            //let json = try! JSON(data: data) //Для чего это требуется?
+            
+            //ВОПРОС! Не понимаю для чего требуется данная запись. Прошу пояснить.
+            //let json = try! JSON(data: data)
             
             let group = try! JSONDecoder().decode(GroupResponse.self, from: data).list
             print(group)
