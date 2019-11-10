@@ -10,6 +10,7 @@
 		486E511BCF32B315B8488576 /* Pods_Vkontakte_VkontakteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6FA6057A99B9EA53D60D3 /* Pods_Vkontakte_VkontakteUITests.framework */; };
 		7CCBA4A8584DE77C0DAF7F59 /* Pods_Vkontakte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90D09CB78914D8B226D192A /* Pods_Vkontakte.framework */; };
 		95287872B0C662516BE167FB /* Pods_VkontakteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */; };
+		9623965E23785AD600519B12 /* FriendsGetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9623965D23785AD600519B12 /* FriendsGetModel.swift */; };
 		962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0D62369A3FF009A6F19 /* FriendResponse.swift */; };
 		962EF0D92369B659009A6F19 /* GroupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0D82369B659009A6F19 /* GroupResponse.swift */; };
 		962EF0DB236ACE12009A6F19 /* FriendPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */; };
@@ -59,6 +60,7 @@
 		32A6FA6057A99B9EA53D60D3 /* Pods_Vkontakte_VkontakteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vkontakte_VkontakteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B279B458CC39A29B6535C1 /* Pods-Vkontakte-VkontakteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.release.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkontakteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9623965D23785AD600519B12 /* FriendsGetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsGetModel.swift; sourceTree = "<group>"; };
 		962EF0D62369A3FF009A6F19 /* FriendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendResponse.swift; sourceTree = "<group>"; };
 		962EF0D82369B659009A6F19 /* GroupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupResponse.swift; sourceTree = "<group>"; };
 		962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoResponse.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				96A6A6E1236763AD00BB33F6 /* Friend.swift */,
+				9623965D23785AD600519B12 /* FriendsGetModel.swift */,
 				962EF0D62369A3FF009A6F19 /* FriendResponse.swift */,
 				96A6A6E52367662B00BB33F6 /* FriendPhoto.swift */,
 				962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */,
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9623965E23785AD600519B12 /* FriendsGetModel.swift in Sources */,
 				963A1675235FE7E300C5B297 /* Session.swift in Sources */,
 				962EF0DB236ACE12009A6F19 /* FriendPhotoResponse.swift in Sources */,
 				96694CEE2355628100377AEE /* LoginFormViewController.swift in Sources */,

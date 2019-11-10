@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-//ВОПРОС! Не понимаю как прописать в классе декодирование полученной фотографии. Прошу подсказать.
-
 class FriendPhoto: Decodable {
-    dynamic var friendPhoto = UIImage()
+    dynamic var friendPhoto = ""
 
-    enum FriendPhotoKeys: UIImage, CodingKey {
-        case friendPhoto
+    enum FriendPhotoKeys: String, CodingKey {
+        case friendPhoto = "album_id"
     }
 
     convenience required init(from decoder: Decoder) throws {
         self.init()
         let values = try decoder.container(keyedBy: FriendPhotoKeys.self)
-        self.friendPhoto = try values.decode(UIImage.self, forKey: .friendPhoto)
+        self.friendPhoto = try values.decode(String.self, forKey: .friendPhoto)
     }
 }

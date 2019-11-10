@@ -8,15 +8,13 @@
 
 import Foundation
 
-//ВОПРОС! в методичке был тип Object. Зачем он нужен был?
-
 class Friend: Decodable {
     dynamic var firstName = ""
     dynamic var lastName = ""
     
     enum FriendKeys: String, CodingKey {
-        case firstName
-        case lastName
+        case firstName = "first_name"
+        case lastName = "last_name"
     }
     
     convenience required init(from decoder: Decoder) throws {

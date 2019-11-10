@@ -12,7 +12,7 @@ class Group: Decodable {
     dynamic var groupName = ""
     
     enum GroupKeys: String, CodingKey {
-        case groupName
+        case groupName = "name"
     }
     
     convenience required init(from decoder: Decoder) throws {

@@ -11,6 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class FriendPhotoResponse: Decodable {
-    let list: [FriendPhoto]
+    let items: [FriendPhoto]
 }
 

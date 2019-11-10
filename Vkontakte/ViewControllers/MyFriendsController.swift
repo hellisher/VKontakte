@@ -16,14 +16,14 @@ class MyFriendsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        responseController.loadUserFriendsData(firstName: "Alexey", lastName: "Abakov") { [weak self] friends in
-            self?.friends = friends
-            self?.tableView?.reloadData()
-        }
-        responseController.loadUserFriendsPhotoData(friendPhoto: (UIImage(named: "1"))!) { [weak self] friendPhotos in
-            self?.friendPhotos = friendPhotos
-            self?.tableView?.reloadData()
-        }
+//        responseController.loadUserFriendsData(firstName: "Alexey", lastName: "Abakov") { [weak self] friends in
+//            self?.friends = friends
+//            self?.tableView?.reloadData()
+//        }
+//        responseController.loadUserFriendsPhotoData(friendPhoto: (UIImage(named: "1"))!) { [weak self] friendPhotos in
+//            self?.friendPhotos = friendPhotos
+//            self?.tableView?.reloadData()
+//        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +38,6 @@ class MyFriendsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
         cell.friendName.text = friend.firstName
-        cell.friendImage.image = friendPhotos.friendPhoto
         return cell
     }
 
