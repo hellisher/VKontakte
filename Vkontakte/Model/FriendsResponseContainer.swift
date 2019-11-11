@@ -8,6 +8,6 @@
 
 import Foundation
 
-class FriendsResponseContainer {
+class FriendsResponseContainer: Decodable {
     let response: FriendResponse
 }
