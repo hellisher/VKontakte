@@ -13,4 +13,3 @@ import SwiftyJSON
 class FriendPhotoResponse: Decodable {
     let items: [FriendPhoto]
 }
-
