@@ -8,6 +8,6 @@
 
 import Foundation
 
-class GroupResponseContainer {
+class GroupResponseContainer: Decodable {
     let response: GroupResponse
 }

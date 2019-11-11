@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FriendPhotoResponseContainer {
+class FriendPhotoResponseContainer: Decodable {
     let response: FriendPhotoResponse
 }
 

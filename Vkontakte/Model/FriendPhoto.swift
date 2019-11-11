@@ -9,7 +9,7 @@
 import Foundation
 
 class FriendPhoto: Decodable {
-    dynamic var friendPhoto: Int
+    dynamic var friendPhoto: Int = 0
 
     enum FriendPhotoKeys: String, CodingKey {
         case friendPhoto = "album_id"
