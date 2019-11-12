@@ -11,5 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class FriendResponse: Decodable {
-    let list: [Friend]
+    let count: Int = 0
+    let items: [Friend]
 }

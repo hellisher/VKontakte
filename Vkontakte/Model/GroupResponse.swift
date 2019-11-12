@@ -11,5 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class GroupResponse: Decodable {
-    let list: [Group]
+    let count: Int = 0
+    let items: [Group]
 }

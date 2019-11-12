@@ -87,12 +87,12 @@ class VKApi {
             URLQueryItem(name: "count", value: "3"),
             URLQueryItem(name: "fields", value: "bdate, city, country"),
             URLQueryItem(name: "name_case", value: "nom"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let json = try! JSON(data: data)
-            let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).list
+//            let json = try? JSON(data: data)
+            let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).items
             print(friend)
         }
     }
@@ -110,11 +110,11 @@ class VKApi {
             URLQueryItem(name: "count", value: "3"),
             URLQueryItem(name: "fields", value: "bdate, city, country"),
             URLQueryItem(name: "name_case", value: "nom"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
         guard let data = response.value else { return }
-        let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).list
+        let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).items
         completion(friend)
         }
     }
@@ -130,18 +130,18 @@ class VKApi {
             URLQueryItem(name: "owner_id", value: "-1"),
             URLQueryItem(name: "album_id", value: "wall"),
             URLQueryItem(name: "count", value: "2"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let json = try! JSON(data: data)
+//            let json = try? JSON(data: data)
             let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).items
             print(friendPhoto)
         }
     }
     
         //Загрузка фотографий пользователя
-    func loadUserFriendsPhotoData(friendPhoto: UIImage, completion: @escaping ([FriendPhoto]) -> Void) {
+    func loadUserFriendsPhotoData(friendPhoto: String, completion: @escaping ([FriendPhoto]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserPhotos = URLComponents()
         urlUserPhotos.scheme = "https"
@@ -151,11 +151,11 @@ class VKApi {
             URLQueryItem(name: "owner_id", value: "-1"),
             URLQueryItem(name: "album_id", value: "wall"),
             URLQueryItem(name: "count", value: "2"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
         guard let data = response.value else { return }
-        let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).items
+            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).items
         completion(friendPhoto)
         }
     }
@@ -171,12 +171,12 @@ class VKApi {
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "count", value: "3"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let json = try! JSON(data: data)
-            let group = try! JSONDecoder().decode(GroupResponse.self, from: data).list
+//            let json = try? JSON(data: data)
+            let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
             print(group)
         }
     }
@@ -192,11 +192,11 @@ class VKApi {
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "count", value: "3"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
         guard let data = response.value else { return }
-        let group = try! JSONDecoder().decode(GroupResponse.self, from: data).list
+        let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
         completion(group)
         }
     }
@@ -211,7 +211,7 @@ class VKApi {
         urlUserGroupsSearch.queryItems = [
             URLQueryItem(name: "q", value: text),
             URLQueryItem(name: "count", value: "3"),
-            URLQueryItem(name: "v", value: "5.102")
+            URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserGroupsSearch, method: .get, parameters: accessParameters).responseJSON { response in
             print(response.value ?? "")
