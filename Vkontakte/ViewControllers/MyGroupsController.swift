@@ -15,10 +15,10 @@ class MyGroupsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        responseController.loadGroupData(groupName: "Apple") { [weak self] groups in
-            self?.myGroups = groups
-            self?.tableView?.reloadData()
-        }
+//        responseController.loadGroupData(groupName: "Apple") { [weak self] groups in
+//            self?.myGroups = groups
+//            self?.tableView?.reloadData()
+//        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

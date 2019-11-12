@@ -93,7 +93,7 @@ class VKApi {
             guard let data = response.value else { return }
             print(response.error)
             print(String(bytes: data, encoding: .utf8))
-            let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).items
+            let friend = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data)
             print(friend)
         }
     }
@@ -137,7 +137,7 @@ class VKApi {
             guard let data = response.value else { return }
             print(response.error)
             print(String(bytes: data, encoding: .utf8))
-            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).items
+            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponseContainer.self, from: data)
             print(friendPhoto)
         }
     }
@@ -157,7 +157,7 @@ class VKApi {
         ]
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponse.self, from: data).items
+            let friendPhoto = try! JSONDecoder().decode(FriendPhotoURL.self, from: data).sizes
             completion(friendPhoto)
         }
     }
@@ -179,7 +179,7 @@ class VKApi {
             guard let data = response.value else { return }
             print(response.error)
             print(String(bytes: data, encoding: .utf8))
-            let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
+            let group = try! JSONDecoder().decode(GroupResponseContainer.self, from: data)
             print(group)
         }
     }
@@ -199,7 +199,7 @@ class VKApi {
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
         guard let data = response.value else { return }
-        let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
+            let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
         completion(group)
         }
     }
