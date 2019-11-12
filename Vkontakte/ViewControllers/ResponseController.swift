@@ -91,15 +91,15 @@ class VKApi {
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            print(response.error)
-            print(String(bytes: data, encoding: .utf8))
+            print(response.error as Any)
+            print(String(bytes: data, encoding: .utf8) as Any)
             let friend = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data)
             print(friend)
         }
     }
     
     //Получение данных о друзьях
-    func loadUserFriendsData(firstName: String, lastName: String, completion: @escaping ([Friend]) -> Void) {
+    func loadUserFriendsData(completion: @escaping ([Friend]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserFriends = URLComponents()
         urlUserFriends.scheme = "https"
@@ -135,15 +135,15 @@ class VKApi {
         ]
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            print(response.error)
-            print(String(bytes: data, encoding: .utf8))
+            print(response.error as Any)
+            print(String(bytes: data, encoding: .utf8) as Any)
             let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponseContainer.self, from: data)
             print(friendPhoto)
         }
     }
     
         //Загрузка фотографий пользователя
-    func loadUserFriendsPhotoData(friendPhoto: String, completion: @escaping ([FriendPhoto]) -> Void) {
+    func loadUserFriendsPhotoData(completion: @escaping ([FriendPhoto]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserPhotos = URLComponents()
         urlUserPhotos.scheme = "https"
@@ -177,15 +177,15 @@ class VKApi {
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            print(response.error)
-            print(String(bytes: data, encoding: .utf8))
+            print(response.error as Any)
+            print(String(bytes: data, encoding: .utf8) as Any)
             let group = try! JSONDecoder().decode(GroupResponseContainer.self, from: data)
             print(group)
         }
     }
     
     //Получение данных о группах
-    func loadGroupData(groupName: String, completion: @escaping ([Group]) -> Void) {
+    func loadGroupData(completion: @escaping ([Group]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserGroups = URLComponents()
         urlUserGroups.scheme = "https"
@@ -198,9 +198,9 @@ class VKApi {
             URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
-        guard let data = response.value else { return }
+            guard let data = response.value else { return }
             let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
-        completion(group)
+            completion(group)
         }
     }
     
