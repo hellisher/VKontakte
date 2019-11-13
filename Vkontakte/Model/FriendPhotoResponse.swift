@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 
 class FriendPhotoResponse: Decodable {
-    let items: [FriendPhoto]
+    let count: Int = 0
+    let items: [FriendPhotoURL]
 }

@@ -11,23 +11,23 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     var myGroups = [Group]()
-    var responseController = VKApi()
-
+    var api = GetVKAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        responseController.loadGroupData(groupName: "Apple") { [weak self] groups in
-            self?.myGroups = groups
-            self?.tableView?.reloadData()
+        api.loadGroupData { groups in
+            self.myGroups = groups
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return myGroups.count
     }
 
@@ -38,21 +38,21 @@ class MyGroupsController: UITableViewController {
         return cell
     }
     
-    @IBAction func addGroup(segue: UIStoryboardSegue) {
-        if segue.identifier == "addGroup" {
-            let allGroupsController = segue.source as! AllGroupsController
-            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
-                let group = allGroupsController.allGroups[indexPath.row]
-                for grp in myGroups {
-                    if grp.groupName == group.groupName {
-                        return
-                    }
-                }
-                myGroups.append(group)
-                tableView.reloadData()
-            }
-        }
-    }
+//    @IBAction func addGroup(segue: UIStoryboardSegue) {
+//        if segue.identifier == "addGroup" {
+//            let allGroupsController = segue.source as! AllGroupsController
+//            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+//                let group = allGroupsController.allGroups[indexPath.row]
+//                for grp in myGroups {
+//                    if grp.groupName == group.groupName {
+//                        return
+//                    }
+//                }
+//                myGroups.append(group)
+//                tableView.reloadData()
+//            }
+//        }
+//    }
 
     /*
     // Override to support conditional editing of the table view.
