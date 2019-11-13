@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 
 class FriendResponse: Decodable {
     let count: Int = 0

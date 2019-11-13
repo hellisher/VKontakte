@@ -21,7 +21,3 @@ class FriendPhoto: Decodable {
         self.friendPhoto = try values.decode(String.self, forKey: .friendPhoto)
     }
 }
-
-class FriendPhotoURL: Decodable {
-    let sizes: [FriendPhoto]
-}

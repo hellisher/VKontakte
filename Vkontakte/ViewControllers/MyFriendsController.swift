@@ -12,19 +12,23 @@ class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
     var friendPhotos = [FriendPhoto]()
-    var responseController = GetVKAPI()
+    var api = GetVKAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        responseController.loadUserFriendsData(firstName: "Alexey", lastName: "Abakov") { [weak self] friends in
-//            self?.friends = friends
-//            self?.tableView?.reloadData()
-//        }
+        api.loadUserFriendsData { friends in
+            self.friends = friends
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+            
+        }
 //        responseController.loadUserFriendsPhotoData(friendPhoto: (UIImage(named: "1"))!) { [weak self] friendPhotos in
 //            self?.friendPhotos = friendPhotos
 //            self?.tableView?.reloadData()
 //        }
-    }
+//    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

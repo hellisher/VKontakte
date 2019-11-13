@@ -10,10 +10,17 @@ import UIKit
 
 class MyGroupsController: UITableViewController {
     
-    var myGroups = [GroupStruct]()
-
+    var myGroups = [Group]()
+    var api = GetVKAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        api.loadGroupData { groups in
+            self.myGroups = groups
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -1,5 +1,5 @@
 //
-//  GroupStruct.swift
+//  FriendPhotoURL.swift
 //  Vkontakte
 //
 //  Created by Валерий Эль-Хатиб on 13.11.2019.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import UIKit
 
-struct GroupStruct {
-    let groupName: String
+class FriendPhotoURL: Decodable {
+    let sizes: [FriendPhoto]
 }
