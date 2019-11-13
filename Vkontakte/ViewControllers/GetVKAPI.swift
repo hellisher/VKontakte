@@ -41,12 +41,12 @@ class GetVKAPI {
             URLQueryItem(name: "count", value: "2"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
-            guard let data = response.value else { return }
-            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponseContainer.self, from: data).response.items.sizes
-            completion(friendPhoto)
-            print(friendPhoto)
-        }
+//        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
+//            guard let data = response.value else { return }
+//            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponseContainer.self, from: data).response.items.sizes
+//            completion(friendPhoto)
+//            print(friendPhoto)
+//        }
     }
     
     //Получение групп пользователя
