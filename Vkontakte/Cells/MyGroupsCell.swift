@@ -20,5 +20,9 @@ class MyGroupsCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    public func configure(with group: GroupStruct) {
+        groupName.text = group.groupName
+    }
 
 }

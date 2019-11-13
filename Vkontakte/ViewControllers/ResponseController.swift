@@ -56,11 +56,6 @@ extension ResponseController: WKNavigationDelegate {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "LoginFormViewController")
         self.present(viewController!, animated: true)
         
-        userInfo.getUserFriends()
-        userInfo.getUserPhotos()
-        userInfo.getUserGroups()
-        userInfo.searchUserGroups(text: "Apple")
-        
         decisionHandler(.cancel)
     }
 }

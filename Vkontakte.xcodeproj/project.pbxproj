@@ -39,6 +39,7 @@
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 		96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */; };
+		96FABB42237C86A500CDB475 /* GroupStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB41237C86A400CDB475 /* GroupStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 		96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVKAPI.swift; sourceTree = "<group>"; };
+		96FABB41237C86A400CDB475 /* GroupStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStruct.swift; sourceTree = "<group>"; };
 		A8BE248A10E0A99D94A072A9 /* Pods-Vkontakte-VkontakteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE190D37CDBB1509AC40D49E /* Pods-Vkontakte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte/Pods-Vkontakte.debug.xcconfig"; sourceTree = "<group>"; };
 		D62AA880C547AB9D8CBE8960 /* Pods-VkontakteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkontakteTests.debug.xcconfig"; path = "Target Support Files/Pods-VkontakteTests/Pods-VkontakteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				962EF0DA236ACE12009A6F19 /* FriendPhotoResponse.swift */,
 				9623966123793BDF00519B12 /* FriendPhotoResponseContainer.swift */,
 				96A6A6E32367661D00BB33F6 /* Group.swift */,
+				96FABB41237C86A400CDB475 /* GroupStruct.swift */,
 				962EF0D82369B659009A6F19 /* GroupResponse.swift */,
 				9623966523793CDB00519B12 /* GroupResponseContainer.swift */,
 				963A1674235FE7E300C5B297 /* Session.swift */,
@@ -509,6 +512,7 @@
 				9633B3E2235D404B00CD5F24 /* AlbumController.swift in Sources */,
 				96C83FDE237A4EBC0022B4C2 /* UserSettings.swift in Sources */,
 				96A6A6E62367662B00BB33F6 /* FriendPhoto.swift in Sources */,
+				96FABB42237C86A500CDB475 /* GroupStruct.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
 				962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */,
 				968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */,
