@@ -46,6 +46,7 @@ class GetVKAPI {
             guard let data = response.value else { return }
             let friend = try! JSONDecoder().decode(FriendResponse.self, from: data).items
             completion(friend)
+            print(friend)
         }
     }
     
@@ -86,6 +87,7 @@ class GetVKAPI {
             guard let data = response.value else { return }
             let friendPhoto = try! JSONDecoder().decode(FriendPhotoURL.self, from: data).sizes
             completion(friendPhoto)
+            print(friendPhoto)
         }
     }
     
@@ -126,6 +128,7 @@ class GetVKAPI {
             guard let data = response.value else { return }
             let group = try! JSONDecoder().decode(GroupResponse.self, from: data).items
             completion(group)
+            print(group)
         }
     }
     
