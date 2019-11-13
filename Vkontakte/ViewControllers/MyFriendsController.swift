@@ -12,7 +12,7 @@ class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
     var friendPhotos = [FriendPhoto]()
-    var responseController = VKApi()
+    var responseController = GetVKAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()

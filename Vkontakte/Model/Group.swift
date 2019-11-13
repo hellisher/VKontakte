@@ -9,6 +9,7 @@
 import Foundation
 
 class Group: Decodable {
+    
     dynamic var groupName = ""
     
     enum GroupKeys: String, CodingKey {

@@ -11,7 +11,7 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     var myGroups = [Group]()
-    var responseController = VKApi()
+    var responseController = GetVKAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
