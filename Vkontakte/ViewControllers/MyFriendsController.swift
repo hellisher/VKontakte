@@ -11,7 +11,6 @@ import UIKit
 class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
-    var friendPhotos = [FriendPhoto]()
     var api = GetVKAPI()
 
     override func viewDidLoad() {
@@ -22,13 +21,7 @@ class MyFriendsController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-            
-        }
-//        responseController.loadUserFriendsPhotoData(friendPhoto: (UIImage(named: "1"))!) { [weak self] friendPhotos in
-//            self?.friendPhotos = friendPhotos
-//            self?.tableView?.reloadData()
-//        }
-//    }
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,7 +34,7 @@ class MyFriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
-        cell.friendName.text = friend.firstName
+        cell.friendName.text = friend.firstName + " " + friend.lastName
         return cell
     }
 

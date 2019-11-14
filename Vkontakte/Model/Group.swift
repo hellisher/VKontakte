@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Group: Decodable {
+class Group: Object, Decodable {
     
-    dynamic var groupName = ""
+    @objc dynamic var groupName = ""
     
     enum GroupKeys: String, CodingKey {
         case groupName = "name"

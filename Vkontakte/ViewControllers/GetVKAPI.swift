@@ -1,7 +1,6 @@
-import UIKit
 import Alamofire
-import WebKit
 import SwiftyJSON
+import RealmSwift
 
 class GetVKAPI {
     
@@ -22,14 +21,27 @@ class GetVKAPI {
         ]
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let friend = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
-            completion(friend)
-            print(friend)
+            let friends = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
+            self.saveUserFriendsData(friends)
+            completion(friends)
+            print(friends)
         }
     }
     
-    //Получение фотографий
-    func loadUserFriendsPhotoData(completion: @escaping ([FriendPhoto]) -> Void) {
+    //Сохранение списка  друзей пользователя в Realm
+    func saveUserFriendsData(_ friends: [Friend]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(friends)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    //Получение фотографий пользователя
+    func loadUserPhotosData(completion: @escaping ([UserPhoto]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserPhotos = URLComponents()
         urlUserPhotos.scheme = "https"
@@ -43,14 +55,27 @@ class GetVKAPI {
         ]
 //        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
 //            guard let data = response.value else { return }
-//            let friendPhoto = try! JSONDecoder().decode(FriendPhotoResponseContainer.self, from: data).response.items.sizes
-//            completion(friendPhoto)
-//            print(friendPhoto)
+//            let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items.sizes
+//            self.saveUserPhotosData(userPhotos)
+//            completion(userPhotos)
+//            print(userPhotos)
 //        }
     }
     
+    //Сохранение фотографий пользователя в Realm
+    func saveUserPhotosData(_ photos: [UserPhoto]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(photos)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
     //Получение групп пользователя
-    func loadGroupData(completion: @escaping ([Group]) -> Void) {
+    func loadUserGroupsData(completion: @escaping ([Group]) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserGroups = URLComponents()
         urlUserGroups.scheme = "https"
@@ -64,9 +89,22 @@ class GetVKAPI {
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let group = try! JSONDecoder().decode(GroupResponseContainer.self, from: data).response.items
-            completion(group)
-            print(group)
+            let groups = try! JSONDecoder().decode(GroupResponseContainer.self, from: data).response.items
+            self.saveUserGroupsData(groups)
+            completion(groups)
+            print(groups)
+        }
+    }
+    
+    //Сохранение списка групп пользователя в Realm
+    func saveUserGroupsData(_ groups: [Group]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(groups)
+            try realm.commitWrite()
+        } catch {
+            print(error)
         }
     }
     

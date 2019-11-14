@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Friend: Decodable {
-    dynamic var firstName = ""
-    dynamic var lastName = ""
+class Friend: Object, Decodable {
+    @objc dynamic var firstName = ""
+    @objc dynamic var lastName = ""
     
     enum FriendKeys: String, CodingKey {
         case firstName = "first_name"

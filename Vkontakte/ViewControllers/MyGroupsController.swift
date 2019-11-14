@@ -15,7 +15,7 @@ class MyGroupsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.loadGroupData { groups in
+        api.loadUserGroupsData() { groups in
             self.myGroups = groups
             DispatchQueue.main.async {
                 self.tableView.reloadData()
