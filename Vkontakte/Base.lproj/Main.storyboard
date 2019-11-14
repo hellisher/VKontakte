@@ -174,7 +174,6 @@
                                 <connections>
                                     <outlet property="friendImage" destination="AdF-ur-mJu" id="owK-b5-cFE"/>
                                     <outlet property="friendName" destination="fCT-Ud-dz1" id="8T0-B5-ql1"/>
-                                    <segue destination="UOJ-WK-aEp" kind="show" id="IdJ-bB-UPS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -189,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="2500" y="-160"/>
         </scene>
-        <!--Album Controller-->
+        <!--My Album-->
         <scene sceneID="SIL-4g-lF7">
             <objects>
                 <collectionViewController id="UOJ-WK-aEp" customClass="AlbumController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,11 +231,12 @@
                             <outlet property="delegate" destination="UOJ-WK-aEp" id="YoS-5X-81F"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="My Album" id="ZHg-gZ-lXf"/>
                     <navigationItem key="navigationItem" id="0x1-h2-fqv"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiW-pc-7r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295.652173913044" y="-161.41304347826087"/>
+            <point key="canvasLocation" x="932" y="-758"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="LZh-9k-dfR">
@@ -272,6 +272,7 @@
                         <segue destination="17V-Nh-laC" kind="relationship" relationship="viewControllers" id="vMU-Gz-ZRr"/>
                         <segue destination="rqh-Am-zZu" kind="relationship" relationship="viewControllers" id="8S9-n0-Fkq"/>
                         <segue destination="gB7-7Q-iFo" kind="relationship" relationship="viewControllers" id="kM5-oV-RCD"/>
+                        <segue destination="UOJ-WK-aEp" kind="relationship" relationship="viewControllers" id="tJL-rT-iqM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMe-Rt-wmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
