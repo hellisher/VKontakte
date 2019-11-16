@@ -12,7 +12,7 @@ class GetVKAPI {
         urlUserFriends.host = "api.vk.com"
         urlUserFriends.path = "/method/friends.get"
         urlUserFriends.queryItems = [
-            URLQueryItem(name: "user_id", value: "6492"),
+            URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "order", value: "name"),
             URLQueryItem(name: "count", value: "3"),
             URLQueryItem(name: "fields", value: "bdate, city, country"),
@@ -84,7 +84,7 @@ class GetVKAPI {
         urlUserGroups.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "extended", value: "1"),
-            URLQueryItem(name: "count", value: "3"),
+            URLQueryItem(name: "count", value: "30"),
             URLQueryItem(name: "v", value: "5.103")
         ]
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in

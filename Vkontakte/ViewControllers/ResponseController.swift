@@ -53,7 +53,7 @@ extension ResponseController: WKNavigationDelegate {
         print(Session.instance.token)
         print(Session.instance.userID)
         
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "LoginFormViewController")
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "TabBarController")
         self.present(viewController!, animated: true)
         
         decisionHandler(.cancel)

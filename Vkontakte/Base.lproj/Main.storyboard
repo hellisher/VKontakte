@@ -35,108 +35,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81F-Mb-ghG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665.21739130434787" y="136.95652173913044"/>
-        </scene>
-        <!--Login Form View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="LoginFormViewController" id="BYZ-38-t0r" customClass="LoginFormViewController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ6-TT-Zea">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VKontakte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-AT-50V">
-                                        <rect key="frame" x="126.66666666666667" y="185" width="160.66666666666663" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwW-ff-3Oz">
-                                        <rect key="frame" x="165.66666666666666" y="271" width="83" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-sg-9Fe">
-                                        <rect key="frame" x="158.66666666666666" y="404" width="96.666666666666657" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-RZ-3Zr">
-                                        <rect key="frame" x="179.66666666666666" y="537" width="55" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <action selector="loginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZj-RR-Yq3"/>
-                                            <segue destination="v4B-0e-Naq" kind="show" id="BPt-dN-1ev"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your account" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aWB-Zs-jbw">
-                                        <rect key="frame" x="117" y="320" width="180" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="yYJ-xw-N2F"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-wt-1Sr">
-                                        <rect key="frame" x="117" y="453" width="180" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="9Bp-b0-x7c"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="AwW-ff-3Oz" firstAttribute="centerX" secondItem="m4I-AT-50V" secondAttribute="centerX" id="50d-Mf-MMu"/>
-                                    <constraint firstItem="wKZ-wt-1Sr" firstAttribute="top" secondItem="0cL-sg-9Fe" secondAttribute="bottom" constant="25" id="8DF-Sn-d52"/>
-                                    <constraint firstAttribute="bottom" secondItem="LsY-RZ-3Zr" secondAttribute="bottom" constant="285" id="Aq0-NN-6HB"/>
-                                    <constraint firstItem="0cL-sg-9Fe" firstAttribute="top" secondItem="aWB-Zs-jbw" secondAttribute="bottom" constant="50" id="Jsc-YF-Z6Q"/>
-                                    <constraint firstItem="LsY-RZ-3Zr" firstAttribute="top" secondItem="wKZ-wt-1Sr" secondAttribute="bottom" constant="50" id="LSt-Rd-6r5"/>
-                                    <constraint firstItem="aWB-Zs-jbw" firstAttribute="top" secondItem="AwW-ff-3Oz" secondAttribute="bottom" constant="25" id="MDZ-o5-ccB"/>
-                                    <constraint firstItem="m4I-AT-50V" firstAttribute="top" secondItem="iJ6-TT-Zea" secondAttribute="top" constant="185" id="YEY-Am-c9p"/>
-                                    <constraint firstItem="LsY-RZ-3Zr" firstAttribute="centerX" secondItem="wKZ-wt-1Sr" secondAttribute="centerX" id="ZtE-Md-rzC"/>
-                                    <constraint firstItem="aWB-Zs-jbw" firstAttribute="centerX" secondItem="AwW-ff-3Oz" secondAttribute="centerX" id="gCL-yd-2ir"/>
-                                    <constraint firstAttribute="trailing" secondItem="m4I-AT-50V" secondAttribute="trailing" constant="186" id="hhL-P7-F4F"/>
-                                    <constraint firstItem="0cL-sg-9Fe" firstAttribute="centerX" secondItem="aWB-Zs-jbw" secondAttribute="centerX" id="kFw-YV-LBh"/>
-                                    <constraint firstItem="AwW-ff-3Oz" firstAttribute="top" secondItem="m4I-AT-50V" secondAttribute="bottom" constant="50" id="mq5-jl-cZU"/>
-                                    <constraint firstItem="wKZ-wt-1Sr" firstAttribute="centerX" secondItem="0cL-sg-9Fe" secondAttribute="centerX" id="nv6-5y-b2v"/>
-                                    <constraint firstItem="m4I-AT-50V" firstAttribute="centerX" secondItem="iJ6-TT-Zea" secondAttribute="centerX" id="pOS-nm-UXG"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="I9W-Km-N72"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="dpw-MG-xQL"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="iJ6-TT-Zea" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="72v-oW-SjD"/>
-                            <constraint firstAttribute="bottom" secondItem="iJ6-TT-Zea" secondAttribute="bottom" id="Epc-bm-nDo"/>
-                            <constraint firstItem="iJ6-TT-Zea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V7f-W0-gE0"/>
-                            <constraint firstItem="iJ6-TT-Zea" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tHM-i3-F3s"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="loginInput" destination="aWB-Zs-jbw" id="wu5-kR-XWw"/>
-                        <outlet property="passwordInput" destination="wKZ-wt-1Sr" id="0bC-pJ-6Mv"/>
-                        <outlet property="scrollView" destination="iJ6-TT-Zea" id="Urv-R2-d42"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="26" y="138"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="LdZ-hc-DAb">
             <objects>
                 <tableViewController id="Aup-f0-A0v" customClass="MyFriendsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0pO-2l-BWv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -193,7 +99,7 @@
             <objects>
                 <collectionViewController id="UOJ-WK-aEp" customClass="MyAlbumController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5K7-8g-eCK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Soz-aY-KDt">
@@ -245,7 +151,7 @@
                     <tabBarItem key="tabBarItem" title="My Friends" image="FriendsIcon" id="TIg-pr-iYa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFe-vx-jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -260,7 +166,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hTO-sV-d7h">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="v4B-0e-Naq" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="v4B-0e-Naq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="xRO-3E-6xn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xRO-IJ-bqd">
@@ -284,7 +190,7 @@
             <objects>
                 <tableViewController id="EBT-ef-vGn" customClass="MyGroupsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ijw-Ut-9TS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -347,7 +253,7 @@
             <objects>
                 <tableViewController id="H1T-VY-M6B" customClass="AllGroupsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9No-Bw-MvF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -408,7 +314,7 @@
                     <tabBarItem key="tabBarItem" title="My Groups" image="GroupsIcon" id="jQw-Ge-J0v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bY3-eI-4uZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -425,7 +331,7 @@
             <objects>
                 <viewController id="gB7-7Q-iFo" customClass="MyAccountController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddP-hs-SQP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Ld-pwT">
