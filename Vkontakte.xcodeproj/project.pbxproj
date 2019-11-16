@@ -35,7 +35,6 @@
 		96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* Friend.swift */; };
 		96A6A6E42367661D00BB33F6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* Group.swift */; };
 		96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* UserPhoto.swift */; };
-		96C83FDE237A4EBC0022B4C2 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C83FDD237A4EBC0022B4C2 /* UserSettings.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 		96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */; };
@@ -96,7 +95,6 @@
 		96A6A6E1236763AD00BB33F6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		96A6A6E52367662B00BB33F6 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
-		96C83FDD237A4EBC0022B4C2 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 		96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVKAPI.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				962EF0D82369B659009A6F19 /* GroupResponse.swift */,
 				9623966523793CDB00519B12 /* GroupResponseContainer.swift */,
 				963A1674235FE7E300C5B297 /* Session.swift */,
-				96C83FDD237A4EBC0022B4C2 /* UserSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,7 +507,6 @@
 				96A6A6E42367661D00BB33F6 /* Group.swift in Sources */,
 				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,
 				9633B3E2235D404B00CD5F24 /* MyAlbumController.swift in Sources */,
-				96C83FDE237A4EBC0022B4C2 /* UserSettings.swift in Sources */,
 				96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
 				962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */,
