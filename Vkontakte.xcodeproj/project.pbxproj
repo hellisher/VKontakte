@@ -78,7 +78,7 @@
 		963A1676235FEB6600C5B297 /* MyAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
 		9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
-		96694CB923555EC300377AEE /* Vkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96694CB923555EC300377AEE /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CBC23555EC300377AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96694CBE23555EC300377AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		96694CC323555EC300377AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		96694CBA23555EC300377AEE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96694CB923555EC300377AEE /* Vkontakte.app */,
+				96694CB923555EC300377AEE /* VK.app */,
 				96694CCF23555EC500377AEE /* VkontakteTests.xctest */,
 				96694CDA23555EC500377AEE /* VkontakteUITests.xctest */,
 			);
@@ -180,11 +180,11 @@
 				96694CBC23555EC300377AEE /* AppDelegate.swift */,
 				96694CBE23555EC300377AEE /* SceneDelegate.swift */,
 				96694CC523555EC500377AEE /* Assets.xcassets */,
-				96D05239237FFC8F00300160 /* Database.swift */,
-				963A1674235FE7E300C5B297 /* Session.swift */,
 				96D478C1235958ED00496861 /* Cells */,
 				96694CEC23555F0D00377AEE /* ViewControllers */,
 				9633B3E9235D468A00CD5F24 /* Model */,
+				96E63C6C2382B87F00ACD798 /* Network */,
+				96E63C6D2382B8C100ACD798 /* Database */,
 			);
 			path = Vkontakte;
 			sourceTree = "<group>";
@@ -216,7 +216,6 @@
 				96D478BD235958B400496861 /* AllGroupsController.swift */,
 				963A1676235FEB6600C5B297 /* MyAccountController.swift */,
 				968DFE56236716DF00C4BABF /* ResponseController.swift */,
-				96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +229,23 @@
 				96D478BF235958E300496861 /* AllGroupsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		96E63C6C2382B87F00ACD798 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */,
+				963A1674235FE7E300C5B297 /* Session.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		96E63C6D2382B8C100ACD798 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				96D05239237FFC8F00300160 /* Database.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		A3BE5C01F64477F092A615B4 /* Pods */ = {
@@ -274,7 +290,7 @@
 			);
 			name = Vkontakte;
 			productName = Vkontakte;
-			productReference = 96694CB923555EC300377AEE /* Vkontakte.app */;
+			productReference = 96694CB923555EC300377AEE /* VK.app */;
 			productType = "com.apple.product-type.application";
 		};
 		96694CCE23555EC500377AEE /* VkontakteTests */ = {
@@ -691,7 +707,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = EVM.Vkontakte;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VK;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -710,7 +726,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = EVM.Vkontakte;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VK;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

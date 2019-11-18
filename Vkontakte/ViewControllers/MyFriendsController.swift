@@ -12,15 +12,18 @@ class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
     var api = GetVKAPI()
+    let database = Database.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.loadUserFriendsData { friends in
-            self.friends = friends
+        api.loadUserFriendsData() { [weak self] in
+            self?.database.loadFriendsData()
+            self?.friends = (self?.database.friends)!
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
+        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
