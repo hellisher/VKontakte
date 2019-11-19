@@ -12,14 +12,13 @@ class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
     var api = GetVKAPI()
-    let database = Database.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
         api.loadUserFriendsData() { [weak self] in
-            self?.database.loadFriendsData()
-            self?.friends = (self?.database.friends)!
             DispatchQueue.main.async {
+                Database.shared.loadFriendsData()
+                self?.friends = Database.shared.friends
                 self?.tableView.reloadData()
             }
         }

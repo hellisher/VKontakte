@@ -4,8 +4,6 @@ import RealmSwift
 
 class GetVKAPI {
     
-    let database = Database.shared
-    
     //Получение списка друзей пользователя
     func loadUserFriendsData(completion: @escaping () -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
@@ -24,7 +22,7 @@ class GetVKAPI {
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let friends = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
-            self.database.saveUserFriendsData(friends)
+            Database.shared.saveUserFriendsData(friends)
             completion()
             print(friends)
         }
@@ -68,7 +66,7 @@ class GetVKAPI {
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let groups = try! JSONDecoder().decode(GroupResponseContainer.self, from: data).response.items
-            self.database.saveUserGroupsData(groups)
+            Database.shared.saveUserGroupsData(groups)
             completion()
             print(groups)
         }

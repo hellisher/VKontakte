@@ -12,14 +12,13 @@ class MyGroupsController: UITableViewController {
     
     var myGroups = [Group]()
     var api = GetVKAPI()
-    let database = Database.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         api.loadUserGroupsData() { [weak self] in
-        self?.database.loadGroupsData()
-        self?.myGroups = (self?.database.myGroups)!
             DispatchQueue.main.async {
+                Database.shared.loadGroupsData()
+                self?.myGroups = Database.shared.myGroups
                 self?.tableView.reloadData()
             }
         }
