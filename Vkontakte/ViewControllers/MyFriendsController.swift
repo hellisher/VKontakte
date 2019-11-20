@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
     var friends = [Friend]()
     var api = GetVKAPI()
-
+    var token: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        let friends = realm.objects(Friend.self)
+        self.token = friends.observe { (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial(let results):
+                print(results)
+            case let .update(results, deletions, insertions, modifications):
+                print(results, deletions, insertions, modifications)
+            case .error(let error):
+                print(error)
+            }
+            print("Friend's data has changed")
+        }
+        
         api.loadUserFriendsData() { [weak self] in
             DispatchQueue.main.async {
-                Database.shared.loadFriendsData()
-                self?.friends = Database.shared.friends
+                self?.friends = Database.shared.loadFriendsData()
                 self?.tableView.reloadData()
             }
         }

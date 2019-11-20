@@ -43,8 +43,8 @@ class GetVKAPI {
         ]
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
-            let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items.sizes
-            self.database.saveUserPhotosData(userPhotos)
+            let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items[0].sizes
+            Database.shared.saveUserPhotosData(userPhotos)
             completion(userPhotos)
             print(userPhotos)
         }

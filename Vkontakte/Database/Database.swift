@@ -13,41 +13,36 @@ class Database {
     
     static let shared = Database()
     
-    var friends = [Friend]()
-    var myGroups = [Group]()
+    private init () {}
     
     //Сохранение списка друзей пользователя в Realm
     func saveUserFriendsData(_ friends: [Friend]) {
         do {
             let realm = try Realm()
             let oldFriends = realm.objects(Friend.self)
-            realm.beginWrite()
+            try! realm.write {
             realm.delete(oldFriends)
             realm.add(friends)
-            try realm.commitWrite()
+            }
             print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }
     }
     
-    func loadFriendsData() {
-        do {
-            let realm = try Realm()
+    func loadFriendsData() -> [Friend] {
+            let realm = try! Realm()
             let friends = realm.objects(Friend.self)
-            self.friends = Array(friends)
-        } catch {
-            print(error)
-        }
+            return Array(friends)
     }
     
     //Сохранение фотографий пользователя в Realm
     func saveUserPhotosData(_ photos: [UserPhoto]) {
         do {
             let realm = try Realm()
-            realm.beginWrite()
+            try! realm.write {
             realm.add(photos)
-            try realm.commitWrite()
+            }
             print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
@@ -59,24 +54,20 @@ class Database {
         do {
             let realm = try Realm()
             let oldGroups = realm.objects(Group.self)
-            realm.beginWrite()
+            try! realm.write {
             realm.delete(oldGroups)
             realm.add(groups)
-            try realm.commitWrite()
+            }
             print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }
     }
     
-    func loadGroupsData() {
-        do {
-            let realm = try Realm()
+    func loadGroupsData() -> [Group] {
+            let realm = try! Realm()
             let groups = realm.objects(Group.self)
-            self.myGroups = Array(groups)
-        } catch {
-            print(error)
-        }
+            return Array(groups)
     }
     
 }

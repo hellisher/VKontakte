@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyGroupsController: UITableViewController {
     
     var myGroups = [Group]()
     var api = GetVKAPI()
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        let groups = realm.objects(Group.self)
+        self.token = groups.observe { (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial(let results):
+                print(results)
+            case let .update(results, deletions, insertions, modifications):
+                print(results, deletions, insertions, modifications)
+            case .error(let error):
+                print(error)
+            }
+            print("Group's data has changed")
+        }
+        
         api.loadUserGroupsData() { [weak self] in
             DispatchQueue.main.async {
-                Database.shared.loadGroupsData()
-                self?.myGroups = Database.shared.myGroups
+                self?.myGroups = Database.shared.loadGroupsData()
                 self?.tableView.reloadData()
             }
         }
