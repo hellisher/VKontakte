@@ -17,10 +17,24 @@ class MyAlbumController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.loadUserPhotosData { photos in
-            self.userPhotos = photos
+        let realm = try! Realm()
+        let photos = realm.objects(UserPhoto.self)
+        self.token = photos.observe { (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial(let results):
+                print(results)
+            case let .update(results, deletions, insertions, modifications):
+                print(results, deletions, insertions, modifications)
+            case .error(let error):
+                print(error)
+            }
+            print("User's album data has changed")
+        }
+        
+        api.loadUserPhotosData() { [weak self] in
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self?.userPhotos = Database.shared.loadUserPhotosData()
+                self?.collectionView.reloadData()
             }
         }
     }

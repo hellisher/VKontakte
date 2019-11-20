@@ -12,7 +12,6 @@ import RealmSwift
 class Database {
     
     static let shared = Database()
-    
     private init () {}
     
     //Сохранение списка друзей пользователя в Realm
@@ -21,8 +20,8 @@ class Database {
             let realm = try Realm()
             let oldFriends = realm.objects(Friend.self)
             try! realm.write {
-            realm.delete(oldFriends)
-            realm.add(friends)
+                realm.delete(oldFriends)
+                realm.add(friends)
             }
             print(realm.configuration.fileURL as Any)
         } catch {
@@ -30,6 +29,7 @@ class Database {
         }
     }
     
+    //Загрузка списка друзей пользователя из базы данных Realm
     func loadFriendsData() -> [Friend] {
             let realm = try! Realm()
             let friends = realm.objects(Friend.self)
@@ -40,13 +40,22 @@ class Database {
     func saveUserPhotosData(_ photos: [UserPhoto]) {
         do {
             let realm = try Realm()
+            let oldPhotos = realm.objects(UserPhoto.self)
             try! realm.write {
-            realm.add(photos)
+                realm.delete(oldPhotos)
+                realm.add(photos)
             }
             print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }
+    }
+    
+    //Загрузка фотографий пользователя из базы данных Realm
+    func loadUserPhotosData() -> [UserPhoto] {
+        let realm = try! Realm()
+        let photos = realm.objects(UserPhoto.self)
+        return Array(photos)
     }
     
     //Сохранение списка групп пользователя в Realm
@@ -55,8 +64,8 @@ class Database {
             let realm = try Realm()
             let oldGroups = realm.objects(Group.self)
             try! realm.write {
-            realm.delete(oldGroups)
-            realm.add(groups)
+                realm.delete(oldGroups)
+                realm.add(groups)
             }
             print(realm.configuration.fileURL as Any)
         } catch {
@@ -64,6 +73,7 @@ class Database {
         }
     }
     
+    //Загрузка списка групп пользователя из базы данных Realm
     func loadGroupsData() -> [Group] {
             let realm = try! Realm()
             let groups = realm.objects(Group.self)

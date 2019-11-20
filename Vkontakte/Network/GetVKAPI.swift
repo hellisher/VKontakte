@@ -29,7 +29,7 @@ class GetVKAPI {
     }
         
     //Получение фотографий пользователя
-    func loadUserPhotosData(completion: @escaping ([UserPhoto]) -> Void) {
+    func loadUserPhotosData(completion: @escaping () -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserPhotos = URLComponents()
         urlUserPhotos.scheme = "https"
@@ -45,7 +45,7 @@ class GetVKAPI {
             guard let data = response.value else { return }
             let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items[0].sizes
             Database.shared.saveUserPhotosData(userPhotos)
-            completion(userPhotos)
+            completion()
             print(userPhotos)
         }
     }
