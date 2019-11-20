@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyAlbumController: UICollectionViewController {
     
     var userPhotos = [UserPhoto]()
     var api = GetVKAPI()
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
