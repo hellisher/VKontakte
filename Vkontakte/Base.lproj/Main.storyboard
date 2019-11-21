@@ -11,7 +11,7 @@
         <!--Response Controller-->
         <scene sceneID="dXQ-Kn-TxT">
             <objects>
-                <viewController id="glJ-R7-Puu" customClass="ResponseController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="glJ-R7-Puu" customClass="ResponseController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24b-im-tda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,13 +40,13 @@
         <!--My Friends-->
         <scene sceneID="LdZ-hc-DAb">
             <objects>
-                <tableViewController id="Aup-f0-A0v" customClass="MyFriendsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Aup-f0-A0v" customClass="MyFriendsController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0pO-2l-BWv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFriendCell" id="hJ5-na-WMq" customClass="MyFriendsCell" customModule="Vkontakte" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFriendCell" id="hJ5-na-WMq" customClass="MyFriendsCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hJ5-na-WMq" id="qXj-Se-8Il">
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="2500" y="-160"/>
         </scene>
-        <!--My Album-->
+        <!--Album-->
         <scene sceneID="SIL-4g-lF7">
             <objects>
-                <collectionViewController id="UOJ-WK-aEp" customClass="MyAlbumController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="UOJ-WK-aEp" customClass="MyAlbumController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5K7-8g-eCK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyAlbumCell" id="uXa-3k-hi0" customClass="MyAlbumCell" customModule="Vkontakte" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyAlbumCell" id="uXa-3k-hi0" customClass="MyAlbumCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9At-mZ-hOe">
@@ -137,7 +137,7 @@
                             <outlet property="delegate" destination="UOJ-WK-aEp" id="YoS-5X-81F"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="My Album" id="ZHg-gZ-lXf"/>
+                    <tabBarItem key="tabBarItem" title="Album" image="square.grid.2x2.fill" catalog="system" id="ZHg-gZ-lXf"/>
                     <navigationItem key="navigationItem" id="0x1-h2-fqv"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiW-pc-7r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,13 +188,13 @@
         <!--My Groups-->
         <scene sceneID="jxS-S9-yXb">
             <objects>
-                <tableViewController id="EBT-ef-vGn" customClass="MyGroupsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EBT-ef-vGn" customClass="MyGroupsController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ijw-Ut-9TS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" id="f1w-4F-lXa" customClass="MyGroupsCell" customModule="Vkontakte" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" id="f1w-4F-lXa" customClass="MyGroupsCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f1w-4F-lXa" id="JYa-sg-vaM">
@@ -251,13 +251,13 @@
         <!--All Groups-->
         <scene sceneID="eKw-HC-lkz">
             <objects>
-                <tableViewController id="H1T-VY-M6B" customClass="AllGroupsController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="H1T-VY-M6B" customClass="AllGroupsController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9No-Bw-MvF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupCell" id="fBK-00-pLP" customClass="AllGroupsCell" customModule="Vkontakte" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupCell" id="fBK-00-pLP" customClass="AllGroupsCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBK-00-pLP" id="bM5-g2-Clt">
@@ -329,7 +329,7 @@
         <!--My Account-->
         <scene sceneID="hVu-cc-ckF">
             <objects>
-                <viewController id="gB7-7Q-iFo" customClass="MyAccountController" customModule="Vkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gB7-7Q-iFo" customClass="MyAccountController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddP-hs-SQP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +354,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-Bm-SEQ">
-                                <rect key="frame" x="120" y="150" width="174" height="36"/>
+                                <rect key="frame" x="120" y="150" width="289" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -374,7 +374,7 @@
                             <constraint firstItem="Jfp-48-RJF" firstAttribute="top" secondItem="cGF-cO-yUd" secondAttribute="bottom" constant="5" id="CJw-7T-9m6"/>
                             <constraint firstItem="cGF-cO-yUd" firstAttribute="top" secondItem="sUP-Bm-SEQ" secondAttribute="bottom" constant="134" id="Dhh-8E-xhY"/>
                             <constraint firstItem="sUP-Bm-SEQ" firstAttribute="top" secondItem="xai-tO-eYl" secondAttribute="top" constant="150" id="GTS-B4-euP"/>
-                            <constraint firstItem="xai-tO-eYl" firstAttribute="trailing" secondItem="sUP-Bm-SEQ" secondAttribute="trailing" constant="120" id="H97-WU-J2H"/>
+                            <constraint firstItem="xai-tO-eYl" firstAttribute="trailing" secondItem="sUP-Bm-SEQ" secondAttribute="trailing" constant="5" id="H97-WU-J2H"/>
                             <constraint firstItem="rSG-1X-7r4" firstAttribute="top" secondItem="Jfp-48-RJF" secondAttribute="bottom" constant="5" id="QKU-dV-ir9"/>
                             <constraint firstItem="xai-tO-eYl" firstAttribute="trailing" secondItem="rSG-1X-7r4" secondAttribute="trailing" constant="5" id="Qas-U0-IOV"/>
                             <constraint firstItem="Jfp-48-RJF" firstAttribute="leading" secondItem="cv3-Ld-pwT" secondAttribute="trailing" constant="10" id="ah4-fz-lO0"/>
@@ -402,5 +402,6 @@
         <image name="FriendsIcon" width="24" height="24"/>
         <image name="GroupsIcon" width="24" height="24"/>
         <image name="SettingsIcon" width="32" height="32"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>
