@@ -18,6 +18,7 @@ class MyFriendsController: UITableViewController {
     var token: NotificationToken?
     
     override func viewDidLoad() {
+        //Firebase
         let ref = Database.database().reference(withPath: "users")
         ref.observe(.value)  { (snapshot) in
             print(snapshot.value)
