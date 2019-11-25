@@ -8,6 +8,9 @@ target 'Vkontakte' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'RealmSwift'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   # Pods for Vkontakte
 

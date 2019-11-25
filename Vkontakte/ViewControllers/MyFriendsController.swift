@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import FirebaseAuth
+import FirebaseDatabase
 
 class MyFriendsController: UITableViewController {
     
@@ -16,6 +18,11 @@ class MyFriendsController: UITableViewController {
     var token: NotificationToken?
     
     override func viewDidLoad() {
+        let ref = Database.database().reference(withPath: "users")
+        ref.observe(.value)  { (snapshot) in
+            print(snapshot.value)
+        }
+        
         super.viewDidLoad()
         let realm = try! Realm()
         let friends = realm.objects(Friend.self)
@@ -33,7 +40,7 @@ class MyFriendsController: UITableViewController {
         
         api.loadUserFriendsData() { [weak self] in
             DispatchQueue.main.async {
-                self?.friends = Database.shared.loadFriendsData()
+                self?.friends = RealmDatabase.shared.loadFriendsData()
                 self?.tableView.reloadData()
             }
         }

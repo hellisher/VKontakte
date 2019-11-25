@@ -33,7 +33,7 @@ class MyGroupsController: UITableViewController {
         
         api.loadUserGroupsData() { [weak self] in
             DispatchQueue.main.async {
-                self?.myGroups = Database.shared.loadGroupsData()
+                self?.myGroups = RealmDatabase.shared.loadGroupsData()
                 self?.tableView.reloadData()
             }
         }

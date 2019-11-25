@@ -33,7 +33,7 @@ class MyAlbumController: UICollectionViewController {
         
         api.loadUserPhotosData() { [weak self] in
             DispatchQueue.main.async {
-                self?.userPhotos = Database.shared.loadUserPhotosData()
+                self?.userPhotos = RealmDatabase.shared.loadUserPhotosData()
                 self?.collectionView.reloadData()
             }
         }

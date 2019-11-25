@@ -22,7 +22,7 @@ class GetVKAPI {
         Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let friends = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
-            Database.shared.saveUserFriendsData(friends)
+            RealmDatabase.shared.saveUserFriendsData(friends)
             completion()
             print(friends)
         }
@@ -44,7 +44,7 @@ class GetVKAPI {
         Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items[0].sizes
-            Database.shared.saveUserPhotosData(userPhotos)
+            RealmDatabase.shared.saveUserPhotosData(userPhotos)
             completion()
             print(userPhotos)
         }
@@ -66,7 +66,7 @@ class GetVKAPI {
         Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let groups = try! JSONDecoder().decode(GroupResponseContainer.self, from: data).response.items
-            Database.shared.saveUserGroupsData(groups)
+            RealmDatabase.shared.saveUserGroupsData(groups)
             completion()
             print(groups)
         }
