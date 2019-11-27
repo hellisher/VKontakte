@@ -1,15 +1,5 @@
-//
-//  MyFriendsController.swift
-//  Vkontakte
-//
-//  Created by Валерий Эль-Хатиб on 21.10.2019.
-//  Copyright © 2019 EVM Corporation. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
-import FirebaseAuth
-import FirebaseDatabase
 
 class MyFriendsController: UITableViewController {
     
@@ -18,26 +8,14 @@ class MyFriendsController: UITableViewController {
     var token: NotificationToken?
     
     override func viewDidLoad() {
-        //Firebase
-        let ref = Database.database().reference(withPath: "users")
-        ref.observe(.value)  { (snapshot) in
-            print(snapshot.value)
-        }
-        
         super.viewDidLoad()
-        let realm = try! Realm()
-        let friends = realm.objects(Friend.self)
-        self.token = friends.observe { (changes: RealmCollectionChange) in
-            switch changes {
-            case .initial(let results):
-                print(results)
-            case let .update(results, deletions, insertions, modifications):
-                print(results, deletions, insertions, modifications)
-            case .error(let error):
-                print(error)
-            }
-            print("Friend's data has changed")
-        }
+        
+        token = RealmDatabase.shared.changesInTheFriendsData()
+        
+        FirebaseAPI.shared.writeUser(name: "Andrey Borodavka", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["city": "Muhosransk"])
+        FirebaseAPI.shared.writeUser(name: "Kosi4chka Lizoblud", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["gender": "transgender"])
+        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["Members": "∞"])
+        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["Members": "∞"])
         
         api.loadUserFriendsData() { [weak self] in
             DispatchQueue.main.async {
@@ -47,7 +25,7 @@ class MyFriendsController: UITableViewController {
         }
         
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

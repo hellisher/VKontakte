@@ -10,7 +10,7 @@ import UIKit
 
 class AllGroupsController: UITableViewController {
 
-    var allGroups = [Group]()
+    var allGroups = globalGroups
     
     override func viewDidLoad() {
         super.viewDidLoad()

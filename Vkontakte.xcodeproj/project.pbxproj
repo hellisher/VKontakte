@@ -24,18 +24,19 @@
 		963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A1676235FEB6600C5B297 /* MyAccountController.swift */; };
 		9647AFAB235AB0D000BBC811 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */; };
 		9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */; };
-		964C0545238390AD0057FFE5 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C0544238390AD0057FFE5 /* FileStorage.swift */; };
 		96694CBD23555EC300377AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CBC23555EC300377AEE /* AppDelegate.swift */; };
 		96694CBF23555EC300377AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CBE23555EC300377AEE /* SceneDelegate.swift */; };
 		96694CC423555EC300377AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96694CC223555EC300377AEE /* Main.storyboard */; };
 		96694CC623555EC500377AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96694CC523555EC500377AEE /* Assets.xcassets */; };
 		96694CD423555EC500377AEE /* VkontakteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CD323555EC500377AEE /* VkontakteTests.swift */; };
 		96694CDF23555EC500377AEE /* VkontakteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96694CDE23555EC500377AEE /* VkontakteUITests.swift */; };
+		967F3164238C5ED900142EB3 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F3163238C5ED900142EB3 /* FirebaseAPI.swift */; };
+		967F316C238CCB7200142EB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967F316B238CCB7200142EB3 /* GoogleService-Info.plist */; };
+		967F316E238CDA0B00142EB3 /* AllGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F316D238CDA0B00142EB3 /* AllGroups.swift */; };
 		968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* ResponseController.swift */; };
 		96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* Friend.swift */; };
 		96A6A6E42367661D00BB33F6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* Group.swift */; };
 		96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* UserPhoto.swift */; };
-		96B0DCAB23881B07002AC3A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96B0DCAA23881B07002AC3A0 /* GoogleService-Info.plist */; };
 		96D0523A237FFC8F00300160 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D05239237FFC8F00300160 /* RealmDatabase.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
@@ -80,7 +81,6 @@
 		963A1676235FEB6600C5B297 /* MyAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
 		9647AFAA235AB0D000BBC811 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
-		964C0544238390AD0057FFE5 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		96694CB923555EC300377AEE /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CBC23555EC300377AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96694CBE23555EC300377AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,11 +93,13 @@
 		96694CDA23555EC500377AEE /* VkontakteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VkontakteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96694CDE23555EC500377AEE /* VkontakteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkontakteUITests.swift; sourceTree = "<group>"; };
 		96694CE023555EC500377AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967F3163238C5ED900142EB3 /* FirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
+		967F316B238CCB7200142EB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		967F316D238CDA0B00142EB3 /* AllGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroups.swift; sourceTree = "<group>"; };
 		968DFE56236716DF00C4BABF /* ResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		96A6A6E1236763AD00BB33F6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		96A6A6E52367662B00BB33F6 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
-		96B0DCAA23881B07002AC3A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../evm/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96D05239237FFC8F00300160 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
@@ -150,16 +152,9 @@
 				96A6A6E32367661D00BB33F6 /* Group.swift */,
 				962EF0D82369B659009A6F19 /* GroupResponse.swift */,
 				9623966523793CDB00519B12 /* GroupResponseContainer.swift */,
+				967F316D238CDA0B00142EB3 /* AllGroups.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		964C0546238390B70057FFE5 /* FileStorage */ = {
-			isa = PBXGroup;
-			children = (
-				964C0544238390AD0057FFE5 /* FileStorage.swift */,
-			);
-			path = FileStorage;
 			sourceTree = "<group>";
 		};
 		96694CB023555EC300377AEE = {
@@ -189,7 +184,7 @@
 			children = (
 				96694CC223555EC300377AEE /* Main.storyboard */,
 				96694CCA23555EC500377AEE /* Info.plist */,
-				96B0DCAA23881B07002AC3A0 /* GoogleService-Info.plist */,
+				967F316B238CCB7200142EB3 /* GoogleService-Info.plist */,
 				96694CBC23555EC300377AEE /* AppDelegate.swift */,
 				96694CBE23555EC300377AEE /* SceneDelegate.swift */,
 				96694CC523555EC500377AEE /* Assets.xcassets */,
@@ -198,7 +193,6 @@
 				9633B3E9235D468A00CD5F24 /* Model */,
 				96E63C6C2382B87F00ACD798 /* Network */,
 				96E63C6D2382B8C100ACD798 /* Database */,
-				964C0546238390B70057FFE5 /* FileStorage */,
 			);
 			path = Vkontakte;
 			sourceTree = "<group>";
@@ -258,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				96D05239237FFC8F00300160 /* RealmDatabase.swift */,
+				967F3163238C5ED900142EB3 /* FirebaseAPI.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -396,7 +391,7 @@
 			files = (
 				96694CC623555EC500377AEE /* Assets.xcassets in Resources */,
 				96694CC423555EC300377AEE /* Main.storyboard in Resources */,
-				96B0DCAB23881B07002AC3A0 /* GoogleService-Info.plist in Resources */,
+				967F316C238CCB7200142EB3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +529,7 @@
 				9633B3E8235D455F00CD5F24 /* MyFriendsController.swift in Sources */,
 				96694CBF23555EC300377AEE /* SceneDelegate.swift in Sources */,
 				96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */,
+				967F3164238C5ED900142EB3 /* FirebaseAPI.swift in Sources */,
 				96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */,
 				96A6A6E42367661D00BB33F6 /* Group.swift in Sources */,
 				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,
@@ -543,13 +539,13 @@
 				962EF0D72369A3FF009A6F19 /* FriendResponse.swift in Sources */,
 				968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */,
 				96D478BE235958B400496861 /* AllGroupsController.swift in Sources */,
-				964C0545238390AD0057FFE5 /* FileStorage.swift in Sources */,
 				9623966423793BF700519B12 /* FriendsResponseContainer.swift in Sources */,
 				96FABB44237C90D500CDB475 /* UserPhotoURL.swift in Sources */,
 				9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */,
 				9623966623793CDB00519B12 /* GroupResponseContainer.swift in Sources */,
 				9633B3E4235D406100CD5F24 /* MyAlbumCell.swift in Sources */,
 				9623966223793BDF00519B12 /* UserPhotoResponseContainer.swift in Sources */,
+				967F316E238CDA0B00142EB3 /* AllGroups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
