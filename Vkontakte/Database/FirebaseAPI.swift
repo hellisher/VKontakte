@@ -44,6 +44,7 @@ class FirebaseAPI {
             groupProperties[property.key] = property.value
         }
         newUserGroup.setValue(groupProperties)
+        ref.observe(.value, with: { snapshot in })
     }
     
 }

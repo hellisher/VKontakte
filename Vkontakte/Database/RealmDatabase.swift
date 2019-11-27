@@ -15,7 +15,7 @@ class RealmDatabase {
                 realm.delete(oldFriends)
                 realm.add(friends)
             }
-            print(realm.configuration.fileURL as Any)
+            //print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }
@@ -54,7 +54,7 @@ class RealmDatabase {
                 realm.delete(oldPhotos)
                 realm.add(photos)
             }
-            print(realm.configuration.fileURL as Any)
+            //print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }
@@ -93,7 +93,7 @@ class RealmDatabase {
                 realm.delete(oldGroups)
                 realm.add(groups)
             }
-            print(realm.configuration.fileURL as Any)
+            //print(realm.configuration.fileURL as Any)
         } catch {
             print(error)
         }

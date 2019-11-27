@@ -7,6 +7,18 @@ class MyAlbumController: UICollectionViewController {
     var api = GetVKAPI()
     var token: NotificationToken?
     
+    func load(url: URL, completion: (UIImage) -> ()) {
+        DispatchQueue.global().async { in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +45,13 @@ class MyAlbumController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyAlbumCell", for: indexPath) as! MyAlbumCell
 //        let userPhoto = userPhotos[indexPath.row]
 //        cell.userPhotos = userPhoto
+        
+        load(url: UserPhoto.UserPhotoKeys.userPhoto) { image in
+            DispatchQueue.main.async {
+                cell.userPhotos = image
+            }
+        }
+        
         return cell
     }
 
