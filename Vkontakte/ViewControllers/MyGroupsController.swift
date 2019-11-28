@@ -15,16 +15,40 @@ class MyGroupsController: UITableViewController {
     var api = GetVKAPI()
     var token: NotificationToken?
     
+    func insertInTable(indexPath: [IndexPath]) {
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: indexPath, with: .none)
+        self.tableView.endUpdates()
+    }
+    
+    func deleteInTable(indexPath: [IndexPath]) {
+        self.tableView.beginUpdates()
+        self.tableView.deleteRows(at: indexPath, with: .none)
+        self.tableView.endUpdates()
+    }
+    
+    func updateInTable(indexPath: [IndexPath]) {
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: indexPath, with: .none)
+        self.tableView.endUpdates()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        token = RealmDatabase.shared.changesInTheGroupsData()
+        
         let realm = try! Realm()
         let groups = realm.objects(Group.self)
-        self.token = groups.observe { (changes: RealmCollectionChange) in
+        token? = groups.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial(let results):
                 print(results)
-            case let .update(results, deletions, insertions, modifications):
-                print(results, deletions, insertions, modifications)
+            case let .update(results, deletedIndexes, insertedIndexes, modificatedIndexes):
+                self.insertInTable(indexPath: insertedIndexes.map { IndexPath(row: $0, section: 0)})
+                self.deleteInTable(indexPath: deletedIndexes.map { IndexPath(row: $0, section: 0)})
+                self.updateInTable(indexPath: modificatedIndexes.map { IndexPath(row: $0, section: 0)})
+                print(results, deletedIndexes, insertedIndexes, modificatedIndexes)
             case .error(let error):
                 print(error)
             }

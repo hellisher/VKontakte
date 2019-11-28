@@ -115,33 +115,12 @@ class RealmDatabase {
             case .initial(let results):
                 print(results)
             case let .update(results, deletedIndexes, insertedIndexes, modificatedIndexes):
-//                deleteInTable(controller: MyGroupsController, indexPath: deletedIndexes.map { IndexPath(row: $0, section: 0)})
-//                insertInTable(controller: MyGroupsController, indexPath: insertedIndexes.map { IndexPath(row: $0, section: 0)})
-//                updateInTable(controller: MyGroupsController, indexPath: modificatedIndexes.map { IndexPath(row: $0, section: 0)})
                 print(results, deletedIndexes, insertedIndexes, modificatedIndexes)
             case .error(let error):
                 print(error)
             }
             print("Group's data has changed")
         }
-    }
-    
-    func insertInTable(controller: UITableViewController, indexPath: [IndexPath]) {
-        controller.tableView.beginUpdates()
-        controller.tableView.insertRows(at: indexPath, with: .none)
-        controller.tableView.endUpdates()
-    }
-    
-    func deleteInTable(controller: UITableViewController, indexPath: [IndexPath]) {
-        controller.tableView.beginUpdates()
-        controller.tableView.deleteRows(at: indexPath, with: .none)
-        controller.tableView.endUpdates()
-    }
-    
-    func updateInTable(controller: UITableViewController, indexPath: [IndexPath]) {
-        controller.tableView.beginUpdates()
-        controller.tableView.reloadRows(at: indexPath, with: .none)
-        controller.tableView.endUpdates()
     }
     
 }
