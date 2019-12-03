@@ -80,6 +80,7 @@
                                 <connections>
                                     <outlet property="friendImage" destination="AdF-ur-mJu" id="owK-b5-cFE"/>
                                     <outlet property="friendName" destination="fCT-Ud-dz1" id="8T0-B5-ql1"/>
+                                    <segue destination="rcl-Ib-Qsh" kind="show" id="aHM-vO-8UG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,7 +95,54 @@
             </objects>
             <point key="canvasLocation" x="2500" y="-160"/>
         </scene>
-        <!--Album-->
+        <!--My Friends Photo View Controller-->
+        <scene sceneID="RIM-6w-hab">
+            <objects>
+                <collectionViewController id="rcl-Ib-Qsh" customClass="MyFriendsPhotoViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZuK-Bx-KJH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MDb-Zg-6jJ">
+                            <size key="itemSize" width="75" height="68"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyFriendsPhotoCell" id="Klp-MF-jca" customClass="MyFriendsPhotoCell" customModule="VK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4oz-t7-BlC">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-Td-pqa">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="6HP-Td-pqa" secondAttribute="bottom" id="3w8-XZ-9SI"/>
+                                        <constraint firstItem="6HP-Td-pqa" firstAttribute="leading" secondItem="4oz-t7-BlC" secondAttribute="leading" id="ZAM-8i-SDg"/>
+                                        <constraint firstAttribute="trailing" secondItem="6HP-Td-pqa" secondAttribute="trailing" id="hck-oB-aXa"/>
+                                        <constraint firstItem="6HP-Td-pqa" firstAttribute="top" secondItem="4oz-t7-BlC" secondAttribute="top" id="psI-Qd-5VU"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="100" height="100"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="rcl-Ib-Qsh" id="TJk-zp-2ds"/>
+                            <outlet property="delegate" destination="rcl-Ib-Qsh" id="tQr-US-Zsg"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="HrG-TR-xda"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eem-we-nCA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3295.652173913044" y="-161.41304347826087"/>
+        </scene>
+        <!--My Album Controller-->
         <scene sceneID="SIL-4g-lF7">
             <objects>
                 <collectionViewController id="UOJ-WK-aEp" customClass="MyAlbumController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,18 +185,18 @@
                             <outlet property="delegate" destination="UOJ-WK-aEp" id="YoS-5X-81F"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Album" image="square.grid.2x2.fill" catalog="system" id="ZHg-gZ-lXf"/>
+                    <tabBarItem key="tabBarItem" title="" image="AlbumIcon" id="ZHg-gZ-lXf"/>
                     <navigationItem key="navigationItem" id="0x1-h2-fqv"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiW-pc-7r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="-758"/>
+            <point key="canvasLocation" x="242" y="890"/>
         </scene>
-        <!--My Friends-->
+        <!--Navigation Controller-->
         <scene sceneID="LZh-9k-dfR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="17V-Nh-laC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Friends" image="FriendsIcon" id="TIg-pr-iYa"/>
+                    <tabBarItem key="tabBarItem" title="" image="FriendsIcon" id="TIg-pr-iYa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFe-vx-jtc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -175,10 +223,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="17V-Nh-laC" kind="relationship" relationship="viewControllers" id="vMU-Gz-ZRr"/>
-                        <segue destination="rqh-Am-zZu" kind="relationship" relationship="viewControllers" id="8S9-n0-Fkq"/>
-                        <segue destination="gB7-7Q-iFo" kind="relationship" relationship="viewControllers" id="kM5-oV-RCD"/>
-                        <segue destination="UOJ-WK-aEp" kind="relationship" relationship="viewControllers" id="tJL-rT-iqM"/>
+                        <segue destination="6os-zF-Ndc" kind="relationship" relationship="viewControllers" id="maf-CS-1K0"/>
+                        <segue destination="17V-Nh-laC" kind="relationship" relationship="viewControllers" id="7Rl-ov-hr0"/>
+                        <segue destination="rqh-Am-zZu" kind="relationship" relationship="viewControllers" id="JwC-gh-d98"/>
+                        <segue destination="UOJ-WK-aEp" kind="relationship" relationship="viewControllers" id="ifz-zi-Jm0"/>
+                        <segue destination="gB7-7Q-iFo" kind="relationship" relationship="viewControllers" id="0xY-nG-y4d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMe-Rt-wmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -307,11 +356,11 @@
             </objects>
             <point key="canvasLocation" x="3296" y="514"/>
         </scene>
-        <!--My Groups-->
+        <!--Navigation Controller-->
         <scene sceneID="m2f-o9-wjh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rqh-Am-zZu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Groups" image="GroupsIcon" id="jQw-Ge-J0v"/>
+                    <tabBarItem key="tabBarItem" title="" image="GroupsIcon" id="jQw-Ge-J0v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bY3-eI-4uZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -326,7 +375,7 @@
             </objects>
             <point key="canvasLocation" x="1690" y="514"/>
         </scene>
-        <!--My Account-->
+        <!--My Account Controller-->
         <scene sceneID="hVu-cc-ckF">
             <objects>
                 <viewController id="gB7-7Q-iFo" customClass="MyAccountController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +434,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xai-tO-eYl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Account" image="SettingsIcon" id="GaZ-A7-USL"/>
+                    <tabBarItem key="tabBarItem" title="" image="SettingsIcon" id="GaZ-A7-USL"/>
                     <connections>
                         <outlet property="token" destination="rSG-1X-7r4" id="bPe-5i-CSN"/>
                         <outlet property="userID" destination="Jfp-48-RJF" id="LLB-mf-aVv"/>
@@ -395,13 +444,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWl-Fy-MrX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="1239"/>
+            <point key="canvasLocation" x="932" y="889"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="fMX-BC-5zd">
+            <objects>
+                <tableViewController id="Thr-Ec-t0S" customClass="NewsViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h93-WN-i4W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="kAM-KA-iXD">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kAM-KA-iXD" id="OjR-NY-SlJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Thr-Ec-t0S" id="G0m-bl-Osv"/>
+                            <outlet property="delegate" destination="Thr-Ec-t0S" id="7a2-nT-Xkd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="News" id="chP-Tx-EHX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRA-8D-IwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2499" y="-825"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ge8-f1-cLQ">
+            <objects>
+                <navigationController id="6os-zF-Ndc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="NewsIcon" id="uXV-8A-aaD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Sc-r9-47C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Thr-Ec-t0S" kind="relationship" relationship="rootViewController" id="5hH-JG-ib2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4K-n2-7Vn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1690" y="-825"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AlbumIcon" width="24" height="24"/>
         <image name="FriendsIcon" width="24" height="24"/>
         <image name="GroupsIcon" width="24" height="24"/>
+        <image name="NewsIcon" width="24" height="24"/>
         <image name="SettingsIcon" width="32" height="32"/>
-        <image name="square.grid.2x2.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

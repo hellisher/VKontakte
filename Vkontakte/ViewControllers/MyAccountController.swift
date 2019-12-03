@@ -1,11 +1,3 @@
-//
-//  MyAccountController.swift
-//  Vkontakte
-//
-//  Created by Валерий Эль-Хатиб on 23.10.2019.
-//  Copyright © 2019 EVM Corporation. All rights reserved.
-//
-
 import UIKit
 
 class MyAccountController: UIViewController {

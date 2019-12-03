@@ -1,51 +1,30 @@
 import UIKit
-import RealmSwift
 
-class MyFriendsController: UITableViewController {
-    
-    var friends = [Friend]()
-    var api = GetVKAPI()
-    var token: NotificationToken?
-    
+class NewsViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        token = RealmDatabase.shared.changesInTheFriendsData()
-        
-        FirebaseAPI.shared.writeUser(name: "Andrey Borodavka", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["city": "Muhosransk"])
-        FirebaseAPI.shared.writeUser(name: "Kosi4chka Lizoblud", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["gender": "transgender"])
-        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["Members": "∞"])
-        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["Members": "∞"])
-        
-        api.loadUserFriendsData() { [weak self] in
-            DispatchQueue.main.async {
-                self?.friends = RealmDatabase.shared.loadFriendsData()
-                self?.tableView.reloadData()
-            }
-        }
-        
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
-        let friend = friends[indexPath.row]
-        cell.friendName.text = friend.firstName + " " + friend.lastName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyFriendsPhotoViewController") as! MyFriendsPhotoViewController
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

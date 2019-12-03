@@ -30,8 +30,6 @@ class MyGroupsController: UITableViewController {
         
 //        token = RealmDatabase.shared.changesInTheGroupsData()
         
-        //Уведомление
-        
         let realm = try! Realm()
         let groups = realm.objects(Group.self)
         token? = groups.observe { (changes: RealmCollectionChange) in
