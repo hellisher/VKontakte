@@ -45,6 +45,8 @@
 		96D0523A237FFC8F00300160 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D05239237FFC8F00300160 /* RealmDatabase.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
+		96ED2A9523AF5EC10075FF5B /* NewsSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED2A9323AF5EC10075FF5B /* NewsSecondCell.swift */; };
+		96ED2A9623AF5EC10075FF5B /* NewsSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96ED2A9423AF5EC10075FF5B /* NewsSecondCell.xib */; };
 		96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */; };
 		96FABB44237C90D500CDB475 /* UserPhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB43237C90D500CDB475 /* UserPhotoURL.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		96D05239237FFC8F00300160 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
+		96ED2A9323AF5EC10075FF5B /* NewsSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSecondCell.swift; sourceTree = "<group>"; };
+		96ED2A9423AF5EC10075FF5B /* NewsSecondCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsSecondCell.xib; sourceTree = "<group>"; };
 		96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVKAPI.swift; sourceTree = "<group>"; };
 		96FABB43237C90D500CDB475 /* UserPhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoURL.swift; sourceTree = "<group>"; };
 		A8BE248A10E0A99D94A072A9 /* Pods-Vkontakte-VkontakteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 			children = (
 				964C85FF2395F8A700A4EF1D /* NewsCell.swift */,
 				964C86002395F8A700A4EF1D /* NewsCell.xib */,
+				96ED2A9323AF5EC10075FF5B /* NewsSecondCell.swift */,
+				96ED2A9423AF5EC10075FF5B /* NewsSecondCell.xib */,
 				9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */,
 				964C86062395FD1D00A4EF1D /* MyFriendsPhotoCell.swift */,
 				9647AFAC235AB10000BBC811 /* MyGroupsCell.swift */,
@@ -412,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ED2A9623AF5EC10075FF5B /* NewsSecondCell.xib in Resources */,
 				96694CC623555EC500377AEE /* Assets.xcassets in Resources */,
 				96694CC423555EC300377AEE /* Main.storyboard in Resources */,
 				964C86022395F8A700A4EF1D /* NewsCell.xib in Resources */,
@@ -551,6 +558,7 @@
 				964C86012395F8A700A4EF1D /* NewsCell.swift in Sources */,
 				96D0523A237FFC8F00300160 /* RealmDatabase.swift in Sources */,
 				962EF0D92369B659009A6F19 /* GroupResponse.swift in Sources */,
+				96ED2A9523AF5EC10075FF5B /* NewsSecondCell.swift in Sources */,
 				9647AFAB235AB0D000BBC811 /* MyGroupsController.swift in Sources */,
 				96694CBD23555EC300377AEE /* AppDelegate.swift in Sources */,
 				9633B3E8235D455F00CD5F24 /* MyFriendsController.swift in Sources */,
