@@ -39,6 +39,9 @@
 		967F316C238CCB7200142EB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967F316B238CCB7200142EB3 /* GoogleService-Info.plist */; };
 		967F316E238CDA0B00142EB3 /* AllGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F316D238CDA0B00142EB3 /* AllGroups.swift */; };
 		968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968DFE56236716DF00C4BABF /* ResponseController.swift */; };
+		96A69CA723C5E3FB00581C6A /* NewsResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A69CA623C5E3FB00581C6A /* NewsResponseContainer.swift */; };
+		96A69CA923C5E5D300581C6A /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A69CA823C5E5D300581C6A /* NewsItems.swift */; };
+		96A69CAB23C5E77400581C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A69CAA23C5E77400581C6A /* News.swift */; };
 		96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* Friend.swift */; };
 		96A6A6E42367661D00BB33F6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* Group.swift */; };
 		96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* UserPhoto.swift */; };
@@ -109,6 +112,9 @@
 		967F316B238CCB7200142EB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		967F316D238CDA0B00142EB3 /* AllGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroups.swift; sourceTree = "<group>"; };
 		968DFE56236716DF00C4BABF /* ResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
+		96A69CA623C5E3FB00581C6A /* NewsResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseContainer.swift; sourceTree = "<group>"; };
+		96A69CA823C5E5D300581C6A /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
+		96A69CAA23C5E77400581C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		96A6A6E1236763AD00BB33F6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		96A6A6E52367662B00BB33F6 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				962EF0D82369B659009A6F19 /* GroupResponse.swift */,
 				9623966523793CDB00519B12 /* GroupResponseContainer.swift */,
 				967F316D238CDA0B00142EB3 /* AllGroups.swift */,
+				96A69CAA23C5E77400581C6A /* News.swift */,
+				96A69CA823C5E5D300581C6A /* NewsItems.swift */,
+				96A69CA623C5E3FB00581C6A /* NewsResponseContainer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,13 +568,16 @@
 				96D0523A237FFC8F00300160 /* RealmDatabase.swift in Sources */,
 				962EF0D92369B659009A6F19 /* GroupResponse.swift in Sources */,
 				96ED2A9523AF5EC10075FF5B /* NewsSecondCell.swift in Sources */,
+				96A69CA923C5E5D300581C6A /* NewsItems.swift in Sources */,
 				9647AFAB235AB0D000BBC811 /* MyGroupsController.swift in Sources */,
 				96694CBD23555EC300377AEE /* AppDelegate.swift in Sources */,
 				9633B3E8235D455F00CD5F24 /* MyFriendsController.swift in Sources */,
 				96694CBF23555EC300377AEE /* SceneDelegate.swift in Sources */,
 				96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */,
 				967F3164238C5ED900142EB3 /* FirebaseAPI.swift in Sources */,
+				96A69CA723C5E3FB00581C6A /* NewsResponseContainer.swift in Sources */,
 				96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */,
+				96A69CAB23C5E77400581C6A /* News.swift in Sources */,
 				964C86072395FD1D00A4EF1D /* MyFriendsPhotoCell.swift in Sources */,
 				96A6A6E42367661D00BB33F6 /* Group.swift in Sources */,
 				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,

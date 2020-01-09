@@ -4,6 +4,29 @@ import RealmSwift
 
 class GetVKAPI {
     
+    //Получение новостей пользователя
+    func loadUserNews(completion: @escaping () -> Void) {
+        let accessParameters = ["access_token": Session.instance.token]
+        var urlUserNews = URLComponents()
+        urlUserNews.scheme = "https"
+        urlUserNews.host = "api.vk.com"
+        urlUserNews.path = "/method/newsfeed.get"
+        urlUserNews.queryItems = [
+            URLQueryItem(name: "filters", value: "post"),
+            URLQueryItem(name: "start_time", value: "1546353303"),
+            URLQueryItem(name: "source_ids", value: "friends, groups"),
+            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "v", value: "5.103")
+        ]
+        Alamofire.request(urlUserNews, method: .get, parameters: accessParameters).responseData { response in
+            guard let data = response.value else { return }
+            let news = try! JSONDecoder().decode(NewsResponseContainer.self, from: data).response.items
+//            RealmDatabase.shared.saveUserNews(news)
+            completion()
+            print(news)
+        }
+    }
+    
     //Получение списка друзей пользователя
     func loadUserFriendsData(completion: @escaping () -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
@@ -24,7 +47,7 @@ class GetVKAPI {
             let friends = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
             RealmDatabase.shared.saveUserFriendsData(friends)
             completion()
-            print(friends)
+            print("Я принтую друзей: \(friends)")
         }
     }
         
