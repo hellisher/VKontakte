@@ -14,7 +14,7 @@ class GetVKAPI {
         urlUserNews.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
             URLQueryItem(name: "start_time", value: "1546353303"),
-            URLQueryItem(name: "source_ids", value: "friends, groups"),
+            URLQueryItem(name: "source_ids", value: "groups"),
             URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "v", value: "5.103")
         ]
@@ -23,7 +23,7 @@ class GetVKAPI {
             let news = try! JSONDecoder().decode(NewsResponseContainer.self, from: data).response.items
 //            RealmDatabase.shared.saveUserNews(news)
             completion()
-            print(news)
+            print("Принт новостей: \(news)")
         }
     }
     
