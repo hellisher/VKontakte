@@ -1,18 +1,28 @@
 import Foundation
+import RealmSwift
+import SwiftyJSON
 
-class News: Decodable {
+class News: Object {
     
-    var date: Date
-    var text: String
+    @objc dynamic var sourceId: Int = 0
+    @objc dynamic var newsText: String = ""
+    @objc dynamic var date: Double = 0
+    @objc dynamic var post_id: Int = 0
+    @objc dynamic var postPhoto: String = ""
+    @objc dynamic var commentsCount: Int = 0
+    @objc dynamic var likesCount: Int = 0
+    @objc dynamic var userLike: Int = 0
     
-    enum NewsKeys: String, CodingKey {
-        case date
-        case text
+    convenience init(_ json: JSON) {
+        self.init()
+        self.sourceId = json["source_id"].intValue
+        self.newsText = json["text"].stringValue
+        self.date = json["date"].doubleValue
+        self.post_id = json["post_id"].intValue
+        self.postPhoto = json["attachments"][0]["photo"]["sizes"][0]["url"].stringValue
+        self.commentsCount = json["comments"]["count"].intValue
+        self.likesCount = json["likes"]["count"].intValue
+        self.userLike = json["likes"]["user_likes"].intValue
     }
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: NewsKeys.self)
-        self.date = try container.decode(Date.self, forKey: .date)
-        self.text = try container.decode(String.self, forKey: .text)
-    }
 }

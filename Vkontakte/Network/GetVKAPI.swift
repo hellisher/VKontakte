@@ -4,29 +4,38 @@ import RealmSwift
 
 class GetVKAPI {
     
+    static let sessionRequest: SessionManager = {
+        let config = URLSessionConfiguration.default
+        let session = SessionManager(configuration: config)
+        return session
+    }()
+    
     //Получение новостей пользователя
-    func loadUserNews(completion: @escaping () -> Void) {
+    func loadUserNews(completion: @escaping (Result<[News]>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserNews = URLComponents()
         urlUserNews.scheme = "https"
         urlUserNews.host = "api.vk.com"
         urlUserNews.path = "/method/newsfeed.get"
         urlUserNews.queryItems = [
-            URLQueryItem(name: "filters", value: "post"),
-            URLQueryItem(name: "start_time", value: "1546353303"),
-            URLQueryItem(name: "source_ids", value: "groups"),
-            URLQueryItem(name: "count", value: "10"),
+            URLQueryItem(name: "count", value: "1"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserNews, method: .get, parameters: accessParameters).responseData { response in
-            guard let data = response.value else { return }
-            let news = try! JSONDecoder().decode(NewsResponseContainer.self, from: data).response.items
-//            RealmDatabase.shared.saveUserNews(news)
-            completion()
-            print("Принт новостей: \(news)")
+        
+        GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("Принтую новости: \(json)")
+                let newJSON = json["response"]["items"].arrayValue
+                let news = newJSON.map {News($0)}
+                completion(.success(news))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
-    
+        
     //Получение списка друзей пользователя
     func loadUserFriendsData(completion: @escaping () -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
@@ -37,7 +46,7 @@ class GetVKAPI {
         urlUserFriends.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "order", value: "name"),
-            URLQueryItem(name: "count", value: "30"),
+            URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "fields", value: "bdate, city, country"),
             URLQueryItem(name: "name_case", value: "nom"),
             URLQueryItem(name: "v", value: "5.103")

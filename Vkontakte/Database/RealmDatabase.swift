@@ -5,7 +5,7 @@ class RealmDatabase {
     
     static let shared = RealmDatabase()
     private init () {}
-    /*
+    
     //Сохранение новостей пользователя в Realm
     func saveUserNews(_ news: [News]) {
         do {
@@ -19,7 +19,6 @@ class RealmDatabase {
             print(error)
         }
     }
-    */
     
     //Сохранение списка друзей пользователя в Realm
     func saveUserFriendsData(_ friends: [Friend]) {

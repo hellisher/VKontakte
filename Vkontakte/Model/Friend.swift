@@ -2,6 +2,7 @@ import Foundation
 import RealmSwift
 
 class Friend: Object, Decodable {
+    
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
     

@@ -2,6 +2,7 @@ import Foundation
 import RealmSwift
 
 class UserPhoto: Object, Decodable {
+    
     @objc dynamic var userPhoto = ""
 
     enum UserPhotoKeys: String, CodingKey {
