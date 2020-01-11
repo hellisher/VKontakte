@@ -65,14 +65,23 @@
                             <constraint firstAttribute="width" constant="30" id="SpI-mY-9dB"/>
                         </constraints>
                         <state key="normal" image="NoLikeIcon"/>
+                        <connections>
+                            <action selector="likeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LyP-vu-Oma"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-6w-aXD">
                         <rect key="frame" x="99" y="408" width="24" height="24"/>
                         <state key="normal" image="ShareIcon"/>
+                        <connections>
+                            <action selector="shareButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Hi8-jJ-kiY"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-Xy-CCq">
                         <rect key="frame" x="52.5" y="408" width="24" height="24"/>
                         <state key="normal" image="CommentIcon"/>
+                        <connections>
+                            <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E3Y-6Y-Kg6"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBd-1l-RET">
                         <rect key="frame" x="78.5" y="410" width="10.5" height="20.5"/>
@@ -130,11 +139,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="commentCounter" destination="TBd-1l-RET" id="fXp-ar-wWJ"/>
                 <outlet property="dateLabel" destination="imR-OB-Xyd" id="ZoE-Md-AdH"/>
+                <outlet property="likeCounter" destination="eAE-OE-yp9" id="Wyd-bT-ec4"/>
                 <outlet property="newsPhotos" destination="Gii-lp-jOo" id="Mdr-Tm-TQw"/>
                 <outlet property="photo" destination="1H6-Qn-RCY" id="Dcf-IN-HeC"/>
+                <outlet property="shareCounter" destination="Enp-8m-xJk" id="pAu-bP-jcY"/>
                 <outlet property="sourceName" destination="kKa-gL-5hI" id="Bon-7S-nBd"/>
                 <outlet property="textView" destination="RlV-fd-HrL" id="SJI-a5-Ni4"/>
+                <outlet property="viewCounter" destination="Xw6-9n-8WH" id="1Rg-5r-zjl"/>
             </connections>
             <point key="canvasLocation" x="65.217391304347828" y="179.46428571428569"/>
         </tableViewCell>

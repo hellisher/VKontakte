@@ -1,23 +1,27 @@
 import UIKit
+import RealmSwift
 
 class NewsViewController: UITableViewController {
     
     var news = [News]()
-    var requestToServer = GetVKAPI()
-//    var token: NotificationToken?
+    var requestVKAPI = GetVKAPI()
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        token = RealmDatabase.shared.changesInTheGroupsData()
+        
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
-        requestToServer.loadUserNews{[weak self] result in
-            guard let self = self else { return }
-//            switch result {
-//            case .success(let news):
-//                RealmDatabase.save(items: news)
-//            case .failure(let error):
-//                fatalError(error.localizedDescription)
-//            }
+        requestVKAPI.loadUserNews{[weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case .success(let news):
+                RealmDatabase.shared.saveUserNews(news)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
         }
     }
     

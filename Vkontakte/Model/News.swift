@@ -1,4 +1,3 @@
-import Foundation
 import RealmSwift
 import SwiftyJSON
 
@@ -24,5 +23,4 @@ class News: Object {
         self.likesCount = json["likes"]["count"].intValue
         self.userLike = json["likes"]["user_likes"].intValue
     }
-    
 }

@@ -11,6 +11,7 @@ target 'Vkontakte' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Kingfisher'
 
   # Pods for Vkontakte
 

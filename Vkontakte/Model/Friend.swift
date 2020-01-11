@@ -1,21 +1,22 @@
-import Foundation
 import RealmSwift
+import SwiftyJSON
 
-class Friend: Object, Decodable {
+class Friend: Object {
     
-    @objc dynamic var firstName = ""
-    @objc dynamic var lastName = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var firstName: String = ""
+    @objc dynamic var lastName: String = ""
+    @objc dynamic var avatar: String = ""
     
-    enum FriendKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
+    convenience init(_ json: JSON) {
+        self.init()
+        self.id = json["id"].intValue
+        self.firstName = json["first_name"].stringValue
+        self.lastName = json["last_name"].stringValue
+        self.avatar =  json["photo_100"].stringValue
     }
     
-    convenience required init(from decoder: Decoder) throws {
-        self.init()
-        let values = try decoder.container(keyedBy: FriendKeys.self)
-        self.firstName = try values.decode(String.self, forKey: .firstName)
-        self.lastName = try values.decode(String.self, forKey: .lastName)
+    override static func primaryKey() -> String? {
+        "id"
     }
 }
-

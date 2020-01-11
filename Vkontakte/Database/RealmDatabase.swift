@@ -20,6 +20,30 @@ class RealmDatabase {
         }
     }
     
+    //Загрузка новостей пользователя из базы данных Realm
+    func loadNewsData() -> [News] {
+            let realm = try! Realm()
+            let news = realm.objects(News.self)
+            return Array(news)
+    }
+    
+    //Уведомление об изменении новостей пользователя в базе данных Realm
+    func changesInTheNewsData() -> NotificationToken? {
+        let realm = try! Realm()
+        let groups = realm.objects(News.self)
+        return groups.observe { (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial(let results):
+                print(results)
+            case let .update(results, deletedIndexes, insertedIndexes, modificatedIndexes):
+                print(results, deletedIndexes, insertedIndexes, modificatedIndexes)
+            case .error(let error):
+                print(error)
+            }
+            print("News's data has changed")
+        }
+    }
+    
     //Сохранение списка друзей пользователя в Realm
     func saveUserFriendsData(_ friends: [Friend]) {
         do {
@@ -79,7 +103,7 @@ class RealmDatabase {
         return Array(photos)
     }
     
-    //
+    //Уведомление об изменении фотографий друзей пользователя в базе данных Realm
     func changesInTheUserPhotosData() -> NotificationToken? {
         let realm = try! Realm()
         let photos = realm.objects(UserPhoto.self)

@@ -3,8 +3,8 @@ import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
-    var friends = [Friend]()
-    var api = GetVKAPI()
+    var friends = try? Realm().objects(Friend.self).sorted(byKeyPath: "id")
+    var requestVKAPI = GetVKAPI()
     var token: NotificationToken?
     
     override func viewDidLoad() {
@@ -17,27 +17,29 @@ class MyFriendsController: UITableViewController {
         FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["Members": "∞"])
         FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["Members": "∞"])
         
-        api.loadUserFriendsData() { [weak self] in
-            DispatchQueue.main.async {
-                self?.friends = RealmDatabase.shared.loadFriendsData()
-                self?.tableView.reloadData()
+        requestVKAPI.loadUserFriendsData() { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case .success(let friends):
+                RealmDatabase.shared.saveUserFriendsData(friends)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return friends?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendCell", for: indexPath) as! MyFriendsCell
-        let friend = friends[indexPath.row]
-        cell.friendName.text = friend.firstName + " " + friend.lastName
+        guard let friend = friends?[indexPath.row] else {return cell}
+        cell.configure(with: friend)
         return cell
     }
     

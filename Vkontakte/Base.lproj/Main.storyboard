@@ -80,7 +80,6 @@
                                 <connections>
                                     <outlet property="friendImage" destination="AdF-ur-mJu" id="owK-b5-cFE"/>
                                     <outlet property="friendName" destination="fCT-Ud-dz1" id="8T0-B5-ql1"/>
-                                    <segue destination="rcl-Ib-Qsh" kind="show" id="aHM-vO-8UG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

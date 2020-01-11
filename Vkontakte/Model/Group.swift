@@ -1,17 +1,20 @@
-import Foundation
 import RealmSwift
+import SwiftyJSON
 
-class Group: Object, Decodable {
+class Group: Object {
     
-    @objc dynamic var groupName = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var groupName: String = ""
+    @objc dynamic var groupAvatar: String = ""
     
-    enum GroupKeys: String, CodingKey {
-        case groupName = "name"
+    convenience init(_ json: JSON) {
+        self.init()
+        self.id = json["id"].intValue
+        self.groupName = json["name"].stringValue
+        self.groupAvatar =  json["photo_100"].stringValue
     }
     
-    convenience required init(from decoder: Decoder) throws {
-        self.init()
-        let values = try decoder.container(keyedBy: GroupKeys.self)
-        self.groupName = try values.decode(String.self, forKey: .groupName)
+    override static func primaryKey() -> String? {
+        "id"
     }
 }

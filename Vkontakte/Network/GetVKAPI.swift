@@ -26,7 +26,7 @@ class GetVKAPI {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("Принтую новости: \(json)")
+                print("Успешный вывод списка новостей: \(json)")
                 let newJSON = json["response"]["items"].arrayValue
                 let news = newJSON.map {News($0)}
                 completion(.success(news))
@@ -35,9 +35,9 @@ class GetVKAPI {
             }
         }
     }
-        
+    
     //Получение списка друзей пользователя
-    func loadUserFriendsData(completion: @escaping () -> Void) {
+    func loadUserFriendsData(completion: @escaping (Result<[Friend]>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserFriends = URLComponents()
         urlUserFriends.scheme = "https"
@@ -46,20 +46,26 @@ class GetVKAPI {
         urlUserFriends.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "order", value: "name"),
-            URLQueryItem(name: "count", value: "10"),
-            URLQueryItem(name: "fields", value: "bdate, city, country"),
+            URLQueryItem(name: "count", value: "30"),
+            URLQueryItem(name: "fields", value: "bdate, city, country, photo_100"),
             URLQueryItem(name: "name_case", value: "nom"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserFriends, method: .get, parameters: accessParameters).responseData { response in
-            guard let data = response.value else { return }
-            let friends = try! JSONDecoder().decode(FriendsResponseContainer.self, from: data).response.items
-            RealmDatabase.shared.saveUserFriendsData(friends)
-            completion()
-            print("Я принтую друзей: \(friends)")
+        
+        GetVKAPI.sessionRequest.request(urlUserFriends, method: .get, parameters: accessParameters).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("Успешный вывод списка друзей: \(json)")
+                let newJSON = json["response"]["items"].arrayValue
+                let news = newJSON.map {Friend($0)}
+                completion(.success(news))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
-        
+    
     //Получение фотографий пользователя
     func loadUserPhotosData(completion: @escaping () -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
@@ -83,7 +89,7 @@ class GetVKAPI {
     }
     
     //Получение групп пользователя
-    func loadUserGroupsData(completion: @escaping () -> Void) {
+    func loadUserGroupsData(completion: @escaping (Result<[Group]>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserGroups = URLComponents()
         urlUserGroups.scheme = "https"
@@ -92,15 +98,21 @@ class GetVKAPI {
         urlUserGroups.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "extended", value: "1"),
-            URLQueryItem(name: "count", value: "30"),
+            URLQueryItem(name: "count", value: "15"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserGroups, method: .get, parameters: accessParameters).responseData { response in
-            guard let data = response.value else { return }
-            let groups = try! JSONDecoder().decode(GroupResponseContainer.self, from: data).response.items
-            RealmDatabase.shared.saveUserGroupsData(groups)
-            completion()
-            print(groups)
+        
+        GetVKAPI.sessionRequest.request(urlUserGroups, method: .get, parameters: accessParameters).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("Успешный вывод списка групп пользователя: \(json)")
+                let newJSON = json["response"]["items"].arrayValue
+                let group = newJSON.map {Group($0)}
+                completion(.success(group))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
     
