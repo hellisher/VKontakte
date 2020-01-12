@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="KGk-i7-Jjw" customClass="NewsCell" customModule="VK" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="452" id="KGk-i7-Jjw" customClass="NewsCell" customModule="VK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="452"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="NewsCell" customModule="VK" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="NewsCell" customModule="VK" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="452"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-Qn-RCY">
@@ -35,7 +35,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RlV-fd-HrL">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RlV-fd-HrL">
                         <rect key="frame" x="0.0" y="108" width="400" height="128"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -127,6 +127,7 @@
                     <constraint firstAttribute="trailing" secondItem="Xw6-9n-8WH" secondAttribute="trailing" constant="5" id="eDe-cE-qlQ"/>
                     <constraint firstItem="TBd-1l-RET" firstAttribute="leading" secondItem="oVP-Xy-CCq" secondAttribute="trailing" constant="2" id="gkE-Cq-fGQ"/>
                     <constraint firstItem="Xw6-9n-8WH" firstAttribute="centerY" secondItem="Bek-ad-Let" secondAttribute="centerY" id="j3H-e7-ZBd"/>
+                    <constraint firstAttribute="bottom" secondItem="T3f-P6-IMk" secondAttribute="bottom" constant="15" id="jQf-bD-BuT"/>
                     <constraint firstItem="Bek-ad-Let" firstAttribute="centerY" secondItem="Enp-8m-xJk" secondAttribute="centerY" id="kDi-OE-iJr"/>
                     <constraint firstAttribute="trailing" secondItem="RlV-fd-HrL" secondAttribute="trailing" id="oFi-hB-TYn"/>
                     <constraint firstItem="imR-OB-Xyd" firstAttribute="leading" secondItem="1H6-Qn-RCY" secondAttribute="trailing" constant="8" symbolic="YES" id="p0e-9G-tgt"/>
@@ -143,13 +144,13 @@
                 <outlet property="dateLabel" destination="imR-OB-Xyd" id="ZoE-Md-AdH"/>
                 <outlet property="likeCounter" destination="eAE-OE-yp9" id="Wyd-bT-ec4"/>
                 <outlet property="newsPhotos" destination="Gii-lp-jOo" id="Mdr-Tm-TQw"/>
-                <outlet property="photo" destination="1H6-Qn-RCY" id="Dcf-IN-HeC"/>
                 <outlet property="shareCounter" destination="Enp-8m-xJk" id="pAu-bP-jcY"/>
+                <outlet property="sourceAvatar" destination="1H6-Qn-RCY" id="uZm-ie-3nA"/>
                 <outlet property="sourceName" destination="kKa-gL-5hI" id="Bon-7S-nBd"/>
                 <outlet property="textView" destination="RlV-fd-HrL" id="SJI-a5-Ni4"/>
                 <outlet property="viewCounter" destination="Xw6-9n-8WH" id="1Rg-5r-zjl"/>
             </connections>
-            <point key="canvasLocation" x="65.217391304347828" y="179.46428571428569"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="44.196428571428569"/>
         </tableViewCell>
     </objects>
     <resources>

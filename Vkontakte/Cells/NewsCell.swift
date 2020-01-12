@@ -24,9 +24,9 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var viewCounter: UILabel!
     
     private let dateFormater: DateFormatter = {
-        let dF = DateFormatter()
-        dF.dateFormat = "HH:mm dd-MM-yyyy"
-        return dF
+        let dateTransformater = DateFormatter()
+        dateTransformater.dateFormat = "HH:mm dd-MM-yyyy"
+        return dateTransformater
     }()
     
     override func awakeFromNib() {
@@ -41,9 +41,10 @@ class NewsCell: UITableViewCell {
         
         guard var sourceId = news?.sourceId else {return}
         var postAuthor: String = ""
-        var avatarURL: String = ""
+        var postAuthorAvatar: String = ""
         var postDate: Date = Date.distantPast
-        var postImageUrl: String = ""
+        var postText: String = ""
+        var postPhotos: String = ""
         guard sourceId != 0 else {return}
         if sourceId > 0 {
             if news == nil {
@@ -53,9 +54,10 @@ class NewsCell: UITableViewCell {
                 let friend = sourceDB.first
                 else {return}
             postAuthor = friend.firstName + " " + friend.lastName
-            avatarURL = friend.avatar
+            postAuthorAvatar = friend.avatar
             postDate = Date(timeIntervalSince1970: news?.date ?? 0)
-            postImageUrl = news?.postPhoto ?? ""
+            postText = news?.newsText ?? ""
+            postPhotos = news?.postPhoto ?? ""
             
         } else {
             sourceId = -sourceId
@@ -66,20 +68,17 @@ class NewsCell: UITableViewCell {
                 let group = sourceDB.first
                 else {return}
             postAuthor = group.groupName
-            avatarURL = group.groupAvatar
+            postAuthorAvatar = group.groupAvatar
             postDate = Date(timeIntervalSince1970: news?.date ?? 0)
-            postImageUrl = news?.postPhoto ?? ""
+            postText = news?.newsText ?? ""
+            postPhotos = news?.postPhoto ?? ""
         }
-        sourceAvatar.kf.setImage(with: URL(string: avatarURL))
+        sourceAvatar.kf.setImage(with: URL(string: postAuthorAvatar))
         sourceName.text = postAuthor
         dateLabel.text = dateFormater.string(from: postDate)
-        textView.text = news?.newsText
-        imageView?.kf.setImage(with: URL(string: postImageUrl))
+        textView.text = postText
+        newsPhotos?.kf.setImage(with: URL(string: postPhotos))
         likeCounter.text = String(news?.likesCount ?? 0 )
         commentCounter.text = String(news?.commentsCount ?? 0)
-        
-//        if news?.userLike == 1{
-//            likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
-//        }
     }
 }

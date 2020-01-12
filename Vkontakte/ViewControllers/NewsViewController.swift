@@ -3,14 +3,14 @@ import RealmSwift
 
 class NewsViewController: UITableViewController {
     
-    var news = [News]()
+    var news = try? Realm().objects(News.self)
     var requestVKAPI = GetVKAPI()
     var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        token = RealmDatabase.shared.changesInTheGroupsData()
+        token = RealmDatabase.shared.changesInTheNewsData()
         
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
@@ -30,7 +30,13 @@ class NewsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
+        return news?.count ?? 0
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        guard let news = news?[indexPath.row] else {return cell}
+        cell.configure(with: news)
+        return cell
+    }
 }
