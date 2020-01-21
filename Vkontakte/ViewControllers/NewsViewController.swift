@@ -14,6 +14,8 @@ class NewsViewController: UITableViewController {
         
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
+        //ForPR
+        
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserNews{[weak self] result in
                 guard self != nil else { return }
