@@ -17,13 +17,15 @@ class MyFriendsController: UITableViewController {
         FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["Members": "∞"])
         FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["Members": "∞"])
         
-        requestVKAPI.loadUserFriendsData() { [weak self] result in
-            guard self != nil else { return }
-            switch result {
-            case .success(let friends):
-                RealmDatabase.shared.saveUserFriendsData(friends)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+        DispatchQueue.global().async {
+            self.requestVKAPI.loadUserFriendsData() { [weak self] result in
+                guard self != nil else { return }
+                switch result {
+                case .success(let friends):
+                    RealmDatabase.shared.saveUserFriendsData(friends)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
     }

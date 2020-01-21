@@ -10,13 +10,15 @@ class MyGroupsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestVKAPI.loadUserGroupsData() { [weak self] result in
-            guard self != nil else { return }
-            switch result {
-            case .success(let groups):
-                RealmDatabase.shared.saveUserGroupsData(groups)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+        DispatchQueue.global().async {
+            self.requestVKAPI.loadUserGroupsData() { [weak self] result in
+                guard self != nil else { return }
+                switch result {
+                case .success(let groups):
+                    RealmDatabase.shared.saveUserGroupsData(groups)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
     }

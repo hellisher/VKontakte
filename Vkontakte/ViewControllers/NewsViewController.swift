@@ -14,13 +14,15 @@ class NewsViewController: UITableViewController {
         
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
-        requestVKAPI.loadUserNews{[weak self] result in
-            guard self != nil else { return }
-            switch result {
-            case .success(let news):
-                RealmDatabase.shared.saveUserNews(news)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+        DispatchQueue.global().async {
+            self.requestVKAPI.loadUserNews{[weak self] result in
+                guard self != nil else { return }
+                switch result {
+                case .success(let news):
+                    RealmDatabase.shared.saveUserNews(news)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
     }
