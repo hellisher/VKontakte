@@ -11,9 +11,6 @@ class MyAccountController: UIViewController {
         super.viewDidLoad()
 
         let session = Session.instance
-        
-        userPhoto.image = session.userPhoto
-        userName.text = session.userName
         userID.text = String(session.userID)
         token.text = session.token
         
