@@ -1,4 +1,3 @@
-//Work in progress
 import UIKit
 
 class MyFriendsPhotoViewController: UICollectionViewController {
