@@ -4,14 +4,14 @@ import RealmSwift
 
 class GetVKAPI {
     
-    static let sessionRequest: SessionManager = {
+    static let sessionRequest: Alamofire.Session = {
         let config = URLSessionConfiguration.default
-        let session = SessionManager(configuration: config)
+        let session = Alamofire.Session(configuration: config)
         return session
     }()
     
     //Получение новостей пользователя
-    func loadUserNews(completion: @escaping (Result<[News]>) -> Void) {
+    func loadUserNews(completion: @escaping (Result<[News], Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserNews = URLComponents()
         urlUserNews.scheme = "https"
@@ -38,7 +38,7 @@ class GetVKAPI {
     }
     
     //Получение списка друзей пользователя
-    func loadUserFriendsData(completion: @escaping (Result<[Friend]>) -> Void) {
+    func loadUserFriendsData(completion: @escaping (Result<[Friend], Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserFriends = URLComponents()
         urlUserFriends.scheme = "https"
@@ -80,7 +80,7 @@ class GetVKAPI {
             URLQueryItem(name: "count", value: "30"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
+        AF.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
             guard let data = response.value else { return }
             let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items[0].sizes
             RealmDatabase.shared.saveUserPhotosData(userPhotos)
@@ -90,7 +90,7 @@ class GetVKAPI {
     }
     
     //Получение групп пользователя
-    func loadUserGroupsData(completion: @escaping (Result<[Group]>) -> Void) {
+    func loadUserGroupsData(completion: @escaping (Result<[Group], Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserGroups = URLComponents()
         urlUserGroups.scheme = "https"
@@ -129,7 +129,7 @@ class GetVKAPI {
             URLQueryItem(name: "count", value: "30"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        Alamofire.request(urlUserGroupsSearch, method: .get, parameters: accessParameters).responseJSON { response in
+        AF.request(urlUserGroupsSearch, method: .get, parameters: accessParameters).responseJSON { response in
             print(response.value ?? "")
         }
     }

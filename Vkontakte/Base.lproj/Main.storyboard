@@ -201,7 +201,6 @@
                     <tabBarItem key="tabBarItem" title="" image="FriendsIcon" id="TIg-pr-iYa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFe-vx-jtc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -365,7 +364,6 @@
                     <tabBarItem key="tabBarItem" title="" image="GroupsIcon" id="jQw-Ge-J0v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bY3-eI-4uZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -473,7 +471,6 @@
                 <navigationController id="6os-zF-Ndc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="NewsIcon" id="uXV-8A-aaD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Sc-r9-47C">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

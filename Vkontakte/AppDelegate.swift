@@ -1,6 +1,5 @@
 import UIKit
 import RealmSwift
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -12,10 +11,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Конфигурация базы данных Realm
         let config = Realm.Configuration( schemaVersion: 1,  deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
-        
-        //Конфигурация базы данных Firebase
-        FirebaseApp.configure()
-        
         return true
     }
     
