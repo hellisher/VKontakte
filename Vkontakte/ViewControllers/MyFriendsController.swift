@@ -9,14 +9,7 @@ class MyFriendsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        token = RealmDatabase.shared.changesInTheFriendsData()
-        
-        FirebaseAPI.shared.writeUser(name: "Andrey Borodavka", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["city": "Muhosransk"])
-        FirebaseAPI.shared.writeUser(name: "Kosi4chka Lizoblud", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["gender": "transgender"])
-        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "o0pnHjdwvIcTpIHxNBts4EyZqo23", properties: ["Members": "∞"])
-        FirebaseAPI.shared.addUserGroup(name: "PornHub", id: "L99J98ZxDvSK8gXjUX5P3fplVu12", properties: ["Members": "∞"])
-        
+
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserFriendsData() { [weak self] result in
                 guard self != nil else { return }

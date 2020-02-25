@@ -18,6 +18,7 @@ class GetVKAPI {
         urlUserNews.host = "api.vk.com"
         urlUserNews.path = "/method/newsfeed.get"
         urlUserNews.queryItems = [
+            URLQueryItem(name: "filters", value: "post"),
             URLQueryItem(name: "count", value: "3"),
             URLQueryItem(name: "v", value: "5.103")
         ]
