@@ -19,20 +19,21 @@ class GetVKAPI {
         urlUserNews.path = "/method/newsfeed.get"
         urlUserNews.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
-            URLQueryItem(name: "count", value: "3"),
+            URLQueryItem(name: "count", value: "5"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        
-        GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("Успешный вывод списка новостей: \(json)")
-                let newJSON = json["response"]["items"].arrayValue
-                let news = newJSON.map {News($0)}
-                completion(.success(news))
-            case .failure(let error):
-                completion(.failure(error))
+        DispatchQueue.global().async {
+            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка новостей: \(json)")
+                    let newJSON = json["response"]["items"].arrayValue
+                    let news = newJSON.map {News($0)}
+                    completion(.success(news))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
     }
@@ -47,45 +48,51 @@ class GetVKAPI {
         urlUserFriends.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "order", value: "name"),
-            URLQueryItem(name: "count", value: "30"),
+            URLQueryItem(name: "count", value: "11"),
             URLQueryItem(name: "fields", value: "bdate, city, country, photo_100"),
             URLQueryItem(name: "name_case", value: "nom"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        
-        GetVKAPI.sessionRequest.request(urlUserFriends, method: .get, parameters: accessParameters).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("Успешный вывод списка друзей: \(json)")
-                let newJSON = json["response"]["items"].arrayValue
-                let news = newJSON.map {Friend($0)}
-                completion(.success(news))
-            case .failure(let error):
-                completion(.failure(error))
+        DispatchQueue.global().async {
+            GetVKAPI.sessionRequest.request(urlUserFriends, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка друзей: \(json)")
+                    let newJSON = json["response"]["items"].arrayValue
+                    let friends = newJSON.map {Friend($0)}
+                    completion(.success(friends))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
     }
     
     //Получение фотографий пользователя
-    func loadUserPhotosData(completion: @escaping () -> Void) {
+    func loadUserPhotosData(completion: @escaping (Result<[AlbumPhoto], Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserPhotos = URLComponents()
         urlUserPhotos.scheme = "https"
         urlUserPhotos.host = "api.vk.com"
         urlUserPhotos.path = "/method/photos.get"
         urlUserPhotos.queryItems = [
-            URLQueryItem(name: "owner_id", value: "-1"),
-            URLQueryItem(name: "album_id", value: "wall"),
-            URLQueryItem(name: "count", value: "30"),
+            URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        AF.request(urlUserPhotos, method: .get, parameters: accessParameters).responseData { response in
-            guard let data = response.value else { return }
-            let userPhotos = try! JSONDecoder().decode(UserPhotoResponseContainer.self, from: data).response.items[0].sizes
-            RealmDatabase.shared.saveUserPhotosData(userPhotos)
-            completion()
-            print(userPhotos)
+        DispatchQueue.global().async {
+            GetVKAPI.sessionRequest.request(urlUserPhotos, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка друзей: \(json)")
+                    let newJSON = json["response"]["items"].arrayValue
+                    let photos = newJSON.map {AlbumPhoto($0)}
+                    completion(.success(photos))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
         }
     }
     
@@ -99,38 +106,22 @@ class GetVKAPI {
         urlUserGroups.queryItems = [
             URLQueryItem(name: "user_id", value: Session.instance.userID),
             URLQueryItem(name: "extended", value: "1"),
-            URLQueryItem(name: "count", value: "15"),
+            URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        
-        GetVKAPI.sessionRequest.request(urlUserGroups, method: .get, parameters: accessParameters).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("Успешный вывод списка групп пользователя: \(json)")
-                let newJSON = json["response"]["items"].arrayValue
-                let group = newJSON.map {Group($0)}
-                completion(.success(group))
-            case .failure(let error):
-                completion(.failure(error))
+        DispatchQueue.global().async {
+            GetVKAPI.sessionRequest.request(urlUserGroups, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка групп пользователя: \(json)")
+                    let newJSON = json["response"]["items"].arrayValue
+                    let group = newJSON.map {Group($0)}
+                    completion(.success(group))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-        }
-    }
-    
-    //Поиск групп пользователя
-    func searchUserGroups(text: String) {
-        let accessParameters = ["access_token": Session.instance.token]
-        var urlUserGroupsSearch = URLComponents()
-        urlUserGroupsSearch.scheme = "https"
-        urlUserGroupsSearch.host = "api.vk.com"
-        urlUserGroupsSearch.path = "/method/groups.search"
-        urlUserGroupsSearch.queryItems = [
-            URLQueryItem(name: "q", value: text),
-            URLQueryItem(name: "count", value: "30"),
-            URLQueryItem(name: "v", value: "5.103")
-        ]
-        AF.request(urlUserGroupsSearch, method: .get, parameters: accessParameters).responseJSON { response in
-            print(response.value ?? "")
         }
     }
 }

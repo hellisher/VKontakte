@@ -10,8 +10,7 @@
 		486E511BCF32B315B8488576 /* Pods_Vkontakte_VkontakteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A6FA6057A99B9EA53D60D3 /* Pods_Vkontakte_VkontakteUITests.framework */; };
 		7CCBA4A8584DE77C0DAF7F59 /* Pods_Vkontakte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90D09CB78914D8B226D192A /* Pods_Vkontakte.framework */; };
 		95287872B0C662516BE167FB /* Pods_VkontakteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */; };
-		9623966223793BDF00519B12 /* UserPhotoResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9623966123793BDF00519B12 /* UserPhotoResponseContainer.swift */; };
-		962EF0DB236ACE12009A6F19 /* UserPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF0DA236ACE12009A6F19 /* UserPhotoResponse.swift */; };
+		9600341E240632F6003DDA4E /* AlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600341D240632F6003DDA4E /* AlbumPhoto.swift */; };
 		9633B3E2235D404B00CD5F24 /* MyAlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E1235D404B00CD5F24 /* MyAlbumController.swift */; };
 		9633B3E4235D406100CD5F24 /* MyAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E3235D406100CD5F24 /* MyAlbumCell.swift */; };
 		9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */; };
@@ -36,12 +35,10 @@
 		96A69CAB23C5E77400581C6A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A69CAA23C5E77400581C6A /* News.swift */; };
 		96A6A6E2236763AD00BB33F6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E1236763AD00BB33F6 /* Friend.swift */; };
 		96A6A6E42367661D00BB33F6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E32367661D00BB33F6 /* Group.swift */; };
-		96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6A6E52367662B00BB33F6 /* UserPhoto.swift */; };
 		96D0523A237FFC8F00300160 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D05239237FFC8F00300160 /* RealmDatabase.swift */; };
 		96D478BE235958B400496861 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BD235958B400496861 /* AllGroupsController.swift */; };
 		96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D478BF235958E300496861 /* AllGroupsCell.swift */; };
 		96FABB3E237B9C3500CDB475 /* GetVKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */; };
-		96FABB44237C90D500CDB475 /* UserPhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FABB43237C90D500CDB475 /* UserPhotoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +64,7 @@
 		32A6FA6057A99B9EA53D60D3 /* Pods_Vkontakte_VkontakteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vkontakte_VkontakteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B279B458CC39A29B6535C1 /* Pods-Vkontakte-VkontakteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.release.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		79CCB643A525C8ED5E631E00 /* Pods_VkontakteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkontakteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9623966123793BDF00519B12 /* UserPhotoResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoResponseContainer.swift; sourceTree = "<group>"; };
-		962EF0DA236ACE12009A6F19 /* UserPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoResponse.swift; sourceTree = "<group>"; };
+		9600341D240632F6003DDA4E /* AlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhoto.swift; sourceTree = "<group>"; };
 		9633B3E1235D404B00CD5F24 /* MyAlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumController.swift; sourceTree = "<group>"; };
 		9633B3E3235D406100CD5F24 /* MyAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumCell.swift; sourceTree = "<group>"; };
 		9633B3E5235D451F00CD5F24 /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
@@ -99,12 +95,10 @@
 		96A69CAA23C5E77400581C6A /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		96A6A6E1236763AD00BB33F6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		96A6A6E32367661D00BB33F6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		96A6A6E52367662B00BB33F6 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
 		96D05239237FFC8F00300160 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		96D478BD235958B400496861 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		96D478BF235958E300496861 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 		96FABB3D237B9C3500CDB475 /* GetVKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVKAPI.swift; sourceTree = "<group>"; };
-		96FABB43237C90D500CDB475 /* UserPhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoURL.swift; sourceTree = "<group>"; };
 		A8BE248A10E0A99D94A072A9 /* Pods-Vkontakte-VkontakteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte-VkontakteUITests/Pods-Vkontakte-VkontakteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE190D37CDBB1509AC40D49E /* Pods-Vkontakte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vkontakte.debug.xcconfig"; path = "Target Support Files/Pods-Vkontakte/Pods-Vkontakte.debug.xcconfig"; sourceTree = "<group>"; };
 		D62AA880C547AB9D8CBE8960 /* Pods-VkontakteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkontakteTests.debug.xcconfig"; path = "Target Support Files/Pods-VkontakteTests/Pods-VkontakteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,10 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				96A6A6E1236763AD00BB33F6 /* Friend.swift */,
-				96A6A6E52367662B00BB33F6 /* UserPhoto.swift */,
-				96FABB43237C90D500CDB475 /* UserPhotoURL.swift */,
-				962EF0DA236ACE12009A6F19 /* UserPhotoResponse.swift */,
-				9623966123793BDF00519B12 /* UserPhotoResponseContainer.swift */,
+				9600341D240632F6003DDA4E /* AlbumPhoto.swift */,
 				96A6A6E32367661D00BB33F6 /* Group.swift */,
 				967F316D238CDA0B00142EB3 /* AllGroups.swift */,
 				96A69CAA23C5E77400581C6A /* News.swift */,
@@ -528,7 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				963A1675235FE7E300C5B297 /* Session.swift in Sources */,
-				962EF0DB236ACE12009A6F19 /* UserPhotoResponse.swift in Sources */,
 				9633B3E6235D451F00CD5F24 /* MyFriendsCell.swift in Sources */,
 				964C86042395F90F00A4EF1D /* NewsViewController.swift in Sources */,
 				964C85FC2395F3C100A4EF1D /* MyFriendsPhotoViewController.swift in Sources */,
@@ -545,14 +535,12 @@
 				96A6A6E42367661D00BB33F6 /* Group.swift in Sources */,
 				96D478C0235958E300496861 /* AllGroupsCell.swift in Sources */,
 				9633B3E2235D404B00CD5F24 /* MyAlbumController.swift in Sources */,
-				96A6A6E62367662B00BB33F6 /* UserPhoto.swift in Sources */,
 				963A1677235FEB6600C5B297 /* MyAccountController.swift in Sources */,
 				968DFE57236716DF00C4BABF /* ResponseController.swift in Sources */,
 				96D478BE235958B400496861 /* AllGroupsController.swift in Sources */,
-				96FABB44237C90D500CDB475 /* UserPhotoURL.swift in Sources */,
 				9647AFAD235AB10000BBC811 /* MyGroupsCell.swift in Sources */,
 				9633B3E4235D406100CD5F24 /* MyAlbumCell.swift in Sources */,
-				9623966223793BDF00519B12 /* UserPhotoResponseContainer.swift in Sources */,
+				9600341E240632F6003DDA4E /* AlbumPhoto.swift in Sources */,
 				967F316E238CDA0B00142EB3 /* AllGroups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

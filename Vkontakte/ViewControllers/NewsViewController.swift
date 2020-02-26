@@ -10,9 +10,9 @@ class NewsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        token = RealmDatabase.shared.changesInTheNewsData()
-        
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
+        
+        token = RealmDatabase.shared.changesInTheNewsData()
         
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserNews{[weak self] result in

@@ -83,10 +83,10 @@ class RealmDatabase {
     }
     
     //Сохранение фотографий пользователя в Realm
-    func saveUserPhotosData(_ photos: [UserPhoto]) {
+    func saveUserPhotosData(_ photos: [AlbumPhoto]) {
         do {
             let realm = try Realm()
-            let oldPhotos = realm.objects(UserPhoto.self)
+            let oldPhotos = realm.objects(AlbumPhoto.self)
             try! realm.write {
                 realm.delete(oldPhotos)
                 realm.add(photos)
@@ -97,16 +97,16 @@ class RealmDatabase {
     }
     
     //Загрузка фотографий пользователя из базы данных Realm
-    func loadUserPhotosData() -> [UserPhoto] {
+    func loadUserPhotosData() -> [AlbumPhoto] {
         let realm = try! Realm()
-        let photos = realm.objects(UserPhoto.self)
+        let photos = realm.objects(AlbumPhoto.self)
         return Array(photos)
     }
     
     //Уведомление об изменении фотографий друзей пользователя в базе данных Realm
     func changesInTheUserPhotosData() -> NotificationToken? {
         let realm = try! Realm()
-        let photos = realm.objects(UserPhoto.self)
+        let photos = realm.objects(AlbumPhoto.self)
         return photos.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial(let results):

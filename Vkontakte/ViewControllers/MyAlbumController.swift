@@ -3,8 +3,8 @@ import RealmSwift
 
 class MyAlbumController: UICollectionViewController {
     
-    var userPhotos = [UserPhoto]()
-    var api = GetVKAPI()
+    var userPhotos = [AlbumPhoto]()
+    var requestVKAPI = GetVKAPI()
     var token: NotificationToken?
     
     func load(url: URL, completion: @escaping (UIImage) -> ()) {
@@ -24,12 +24,12 @@ class MyAlbumController: UICollectionViewController {
         
         token = RealmDatabase.shared.changesInTheUserPhotosData()
         
-        api.loadUserPhotosData() { [weak self] in
-            DispatchQueue.main.async {
-                self?.userPhotos = RealmDatabase.shared.loadUserPhotosData()
-                self?.collectionView.reloadData()
-            }
-        }
+//        requestVKAPI.loadUserPhotosData() { [weak self] in
+//            DispatchQueue.main.async {
+//                self?.userPhotos = RealmDatabase.shared.loadUserPhotosData()
+//                self?.collectionView.reloadData()
+//            }
+//        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
