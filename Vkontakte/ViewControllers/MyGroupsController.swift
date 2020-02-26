@@ -10,6 +10,8 @@ class MyGroupsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        token = RealmDatabase.shared.changesInTheGroupsData()
+        
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserGroupsData() { [weak self] result in
                 guard self != nil else { return }

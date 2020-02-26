@@ -9,7 +9,9 @@ class MyFriendsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+       
+        token = RealmDatabase.shared.changesInTheFriendsData()
+        
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserFriendsData() { [weak self] result in
                 guard self != nil else { return }
