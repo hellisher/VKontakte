@@ -3,6 +3,7 @@ import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
+    //Как переделать класс чтобы список друзей загружался не из базы?
     var friends = try? Realm().objects(Friend.self).sorted(byKeyPath: "id")
     var requestVKAPI = GetVKAPI()
     var token: NotificationToken?

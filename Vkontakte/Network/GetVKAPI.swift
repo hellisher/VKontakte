@@ -22,7 +22,25 @@ class GetVKAPI {
             URLQueryItem(name: "count", value: "5"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        DispatchQueue.global().async {
+        
+        let userNewsDispatchGroup = DispatchGroup()
+        
+        DispatchQueue.global().async(group: userNewsDispatchGroup) {
+            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка новостей: \(json)")
+                    let newJSON = json["response"]["profiles"].arrayValue
+                    let news = newJSON.map {News($0)}
+                    completion(.success(news))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        DispatchQueue.global().async(group: userNewsDispatchGroup) {
             GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
                 switch response.result {
                 case .success(let value):
@@ -35,6 +53,25 @@ class GetVKAPI {
                     completion(.failure(error))
                 }
             }
+        }
+        
+        DispatchQueue.global().async(group: userNewsDispatchGroup) {
+            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("Успешный вывод списка новостей: \(json)")
+                    let newJSON = json["response"]["groups"].arrayValue
+                    let news = newJSON.map {News($0)}
+                    completion(.success(news))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        userNewsDispatchGroup.notify(queue: DispatchQueue.main) {
+            //Как передать общий completion?
         }
     }
     
@@ -60,7 +97,7 @@ class GetVKAPI {
                     let json = JSON(value)
                     print("Успешный вывод списка друзей: \(json)")
                     let newJSON = json["response"]["items"].arrayValue
-                    let friends = newJSON.map {Friend($0)}
+                    let friends = newJSON.compactMap {Friend($0)}
                     completion(.success(friends))
                 case .failure(let error):
                     completion(.failure(error))
