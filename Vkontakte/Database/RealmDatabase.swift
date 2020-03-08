@@ -66,21 +66,10 @@ class RealmDatabase {
     }
     
     //Уведомление об изменении списка друзей пользователя в базе данных Realm
-    func changesInTheFriendsData() -> NotificationToken? {
+    func changesInTheFriendsData(observationHandler: @escaping (RealmCollectionChange<Results<Friend>>) -> Void) -> NotificationToken? {
         let realm = try! Realm()
         let friends = realm.objects(Friend.self)
-        return friends.observe { (changes: RealmCollectionChange) in
-            switch changes {
-            case .initial(let results):
-                print(results)
-            case let .update(results, deletions, insertions, modifications):
-                //Как правильно написать обновление таблицы друзей в реальном времени?
-                print(results, deletions, insertions, modifications)
-                print("Friend's data has changed and updated")
-            case .error(let error):
-                print("Friend's data has failed. Error: \(error)")
-            }
-        }
+        return friends.observe(observationHandler)
     }
     
     //Сохранение фотографий пользователя в Realm

@@ -18,7 +18,7 @@ class NewsViewController: UITableViewController {
             self.requestVKAPI.loadUserNews{[weak self] result in
                 guard self != nil else { return }
                 switch result {
-                case .success(let news):
+                case .success(let news, _, _):
                     RealmDatabase.shared.saveUserNews(news)
                 case .failure(let error):
                     fatalError(error.localizedDescription)

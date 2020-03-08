@@ -3,15 +3,12 @@ import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
-    //Как переделать класс чтобы список друзей загружался не из базы?
-    var friends = try? Realm().objects(Friend.self).sorted(byKeyPath: "id")
+    var friends: Results<Friend>?
     var requestVKAPI = GetVKAPI()
     var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        token = RealmDatabase.shared.changesInTheFriendsData()
         
         DispatchQueue.global().async {
             self.requestVKAPI.loadUserFriendsData() { [weak self] result in
@@ -24,6 +21,29 @@ class MyFriendsController: UITableViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        token = RealmDatabase.shared.changesInTheFriendsData(observationHandler: { [weak self] changes in
+            switch changes {
+            case .error(let error):
+                print(error)
+            case .initial(let initialFriends):
+                self?.friends = initialFriends.sorted(byKeyPath: "id")
+                self?.tableView.reloadData()
+            case let .update(updatedFriends, _, _, _):
+                self?.friends = updatedFriends.sorted(byKeyPath: "id")
+                self?.tableView.reloadData()
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        token?.invalidate()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

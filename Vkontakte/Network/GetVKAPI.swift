@@ -11,7 +11,7 @@ class GetVKAPI {
     }()
     
     //Получение новостей пользователя
-    func loadUserNews(completion: @escaping (Result<[News], Error>) -> Void) {
+    func loadUserNews(completion: @escaping (Result<([News], [Friend], [Group]), Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserNews = URLComponents()
         urlUserNews.scheme = "https"
@@ -24,54 +24,34 @@ class GetVKAPI {
         ]
         
         let userNewsDispatchGroup = DispatchGroup()
-        
-        DispatchQueue.global().async(group: userNewsDispatchGroup) {
-            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("Успешный вывод списка новостей: \(json)")
+        GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                var news = [News]()
+                var profiles = [Friend]()
+                var groups = [Group]()
+                
+                print("Успешный вывод списка новостей: \(json)")
+                DispatchQueue.global().async(group: userNewsDispatchGroup) {
                     let newJSON = json["response"]["profiles"].arrayValue
-                    let news = newJSON.map {News($0)}
-                    completion(.success(news))
-                case .failure(let error):
-                    completion(.failure(error))
+                    profiles = newJSON.compactMap {Friend($0)}
                 }
-            }
-        }
-        
-        DispatchQueue.global().async(group: userNewsDispatchGroup) {
-            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("Успешный вывод списка новостей: \(json)")
+                DispatchQueue.global().async(group: userNewsDispatchGroup) {
                     let newJSON = json["response"]["items"].arrayValue
-                    let news = newJSON.map {News($0)}
-                    completion(.success(news))
-                case .failure(let error):
-                    completion(.failure(error))
+                    news = newJSON.map {News($0)}
                 }
-            }
-        }
-        
-        DispatchQueue.global().async(group: userNewsDispatchGroup) {
-            GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("Успешный вывод списка новостей: \(json)")
+                DispatchQueue.global().async(group: userNewsDispatchGroup) {
                     let newJSON = json["response"]["groups"].arrayValue
-                    let news = newJSON.map {News($0)}
-                    completion(.success(news))
-                case .failure(let error):
-                    completion(.failure(error))
+                    groups = newJSON.map {Group($0)}
                 }
+                
+                userNewsDispatchGroup.notify(queue: DispatchQueue.main) {
+                    completion(.success((news, profiles, groups)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
             }
-        }
-        
-        userNewsDispatchGroup.notify(queue: DispatchQueue.main) {
-            //Как передать общий completion?
         }
     }
     
