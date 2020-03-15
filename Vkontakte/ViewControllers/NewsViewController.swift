@@ -7,8 +7,36 @@ class NewsViewController: UITableViewController {
     var requestVKAPI = GetVKAPI()
     var token: NotificationToken?
     
+    @objc func refreshNews() {
+        self.refreshControl?.beginRefreshing()
+        let mostFreshNewDate = self.news?.first?.date ?? Date().timeIntervalSince1970
+        requestVKAPI.loadUserNews(startTime: mostFreshNewDate + 1) { [weak self] news in
+            
+            guard let self = self else { return }
+            
+            self.refreshControl?.endRefreshing()
+            
+            guard news.count > 0 else { return }
+            
+            self.news = news + self.news
+            
+            let indexSet = IndexSet(integerIn: 0..<news.count)
+            self.tableView.insertSections(IndexSet, with: .automatic)
+            
+        }
+    }
+    
+    fileprivate func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Ёпта! Обновляется!")
+        refreshControl?.tintColor = .magenta
+        refreshControl?.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupRefreshControl()
         
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         

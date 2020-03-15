@@ -11,7 +11,7 @@ class GetVKAPI {
     }()
     
     //Получение новостей пользователя
-    func loadUserNews(completion: @escaping (Result<([News], [Friend], [Group]), Error>) -> Void) {
+    func loadUserNews(startFrom: String = "", startTime: Double? = nil, completion: @escaping (Result<([News], [Friend], [Group]), Error>) -> Void) {
         let accessParameters = ["access_token": Session.instance.token]
         var urlUserNews = URLComponents()
         urlUserNews.scheme = "https"
@@ -19,10 +19,11 @@ class GetVKAPI {
         urlUserNews.path = "/method/newsfeed.get"
         urlUserNews.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
+            URLQueryItem(name: "start_time", value: "0.00"),
             URLQueryItem(name: "count", value: "5"),
             URLQueryItem(name: "v", value: "5.103")
         ]
-        
+                
         let userNewsDispatchGroup = DispatchGroup()
         GetVKAPI.sessionRequest.request(urlUserNews, method: .get, parameters: accessParameters).responseJSON { response in
             switch response.result {

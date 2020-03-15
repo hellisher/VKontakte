@@ -11,6 +11,7 @@ class News: Object {
     @objc dynamic var commentsCount: Int = 0
     @objc dynamic var likesCount: Int = 0
     @objc dynamic var userLike: Int = 0
+    @objc dynamic var starttime: Double = 0
     
     convenience init(_ json: JSON) {
         self.init()
@@ -22,5 +23,6 @@ class News: Object {
         self.commentsCount = json["comments"]["count"].intValue
         self.likesCount = json["likes"]["count"].intValue
         self.userLike = json["likes"]["user_likes"].intValue
+        self.starttime = json["start_time"].doubleValue
     }
 }
