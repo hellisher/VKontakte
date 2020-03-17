@@ -4,7 +4,7 @@ import RealmSwift
 class RealmDatabase {
     
     static let shared = RealmDatabase()
-    private init () {}
+    private init() {}
     
     //Сохранение новостей пользователя в Realm
     func saveUserNews(_ news: [News]) {

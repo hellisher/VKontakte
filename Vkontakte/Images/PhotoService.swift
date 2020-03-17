@@ -3,6 +3,9 @@ import Alamofire
 
 class PhotoService {
     
+    static let shared = PhotoService()
+    private init() {}
+    
     private let cacheLifeTime: TimeInterval = 30 * 24 * 60 * 60
     private static let pathName: String = {
         

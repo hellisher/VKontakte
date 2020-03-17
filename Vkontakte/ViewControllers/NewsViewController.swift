@@ -10,19 +10,23 @@ class NewsViewController: UITableViewController {
     @objc func refreshNews() {
         self.refreshControl?.beginRefreshing()
         let mostFreshNewDate = self.news?.first?.date ?? Date().timeIntervalSince1970
+        
         requestVKAPI.loadUserNews(startTime: mostFreshNewDate + 1) { [weak self] news in
             
-            guard let self = self else { return }
+            guard self != nil else { return }
             
-            self.refreshControl?.endRefreshing()
-            
-            guard news.count > 0 else { return }
-            
-            self.news = news + self.news
-            
-            let indexSet = IndexSet(integerIn: 0..<news.count)
-            self.tableView.insertSections(IndexSet, with: .automatic)
-            
+            switch news {
+            case .success(let news, _, _):
+                RealmDatabase.shared.saveUserNews(news)
+                self.refreshControl?.endRefreshing()
+                guard news.count > 0 else { return }
+                self.news = news + self.news
+                let indexSet = IndexSet(integerIn: 0..<news.count)
+                self.tableView.insertSections(IndexSet, with: .automatic)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
+            self?.refreshControl?.endRefreshing()
         }
     }
     
